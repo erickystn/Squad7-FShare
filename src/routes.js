@@ -1,23 +1,22 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ContentMain from './pages/ContentMain'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
 
 const Routes = () => {
-  return(
+  return (
     <BrowserRouter>
-      <Header/>
-      <Menu/>
+      <Header />
+      <Menu />
 
       <Switch>
-        <Route exact path="/" component={ContentMain}/>
-        <Route path="/sobre" componet={ContentMain}/> 
+        <Route exact path="/" component={ContentMain} />
+        <Route path="/sobre" componet={ContentMain} />
       </Switch>
 
-      <Footer/>
+      <Footer />
     </BrowserRouter>
-    
   )
 }
 

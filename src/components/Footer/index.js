@@ -10,7 +10,6 @@ export default class Footer extends Component {
             <b>Version</b> 1.0.0
           </div>
         </footer>
-
       </div>
     )
   }
