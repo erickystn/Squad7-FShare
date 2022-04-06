@@ -3,6 +3,7 @@ import ContentMain from './pages/ContentMain'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
+import Mentorias from './pages/Mentorias'
 
 const Routes = () => {
   return (
@@ -12,7 +13,8 @@ const Routes = () => {
 
       <Switch>
         <Route exact path="/" component={ContentMain} />
-        <Route path="/sobre" componet={ContentMain} />
+        <Route path="/mentorias" component={Mentorias} />
+        <Route path="/sobre" component={ContentMain} />
       </Switch>
 
       <Footer />

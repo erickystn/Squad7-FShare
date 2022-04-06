@@ -6,7 +6,7 @@ export default class Menu extends Component {
     return (
       <div>
         {/* Main Sidebar Container */}
-        <aside className="main-sidebar sidebar-dark-primary elevation-4">
+        <aside className="main-sidebar sidebar-dark-primary elevation-4" >
           {/* Brand Logo */}
           <Link to="/" className="brand-link">
             <img src="dist/img/logo.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{ opacity: '.8' }} />
@@ -24,7 +24,7 @@ export default class Menu extends Component {
               </div>
             </div>
             {/* SidebarSearch Form */}
-            <div className="form-inline">
+            {/* <div className="form-inline">
               <div className="input-group" data-widget="sidebar-search">
                 <input className="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search" />
                 <div className="input-group-append">
@@ -33,7 +33,7 @@ export default class Menu extends Component {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* Sidebar Menu */}
             <nav className="mt-2">
               <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -45,6 +45,15 @@ export default class Menu extends Component {
                     <i className="nav-icon fas fa-tachometer-alt" />
                     <p>
                       Home
+                    </p>
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/mentorias" className="nav-link">
+                    <i class="nav-icon fa fa-graduation-cap"></i>
+                    <p>
+                      Buscar mentores
                     </p>
                   </Link>
                 </li>
