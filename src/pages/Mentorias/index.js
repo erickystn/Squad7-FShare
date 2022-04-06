@@ -70,22 +70,21 @@ export default class Mentorias extends Component {
                             <p class="text-muted text-sm">CEO da FCamara </p>
 
                           </div>
+                        </div>
 
-                          <div class="row">
-                            <div class="chip">
-                              JavaScript
-                            </div>
-                            <div class="chip">
-                              CSS
-                            </div>
-                            <div class="chip">
-                              HTML
-                            </div>
-                            <div class="chip">
-                              React
-                            </div>
+                        <div class="row justify-content-center">
+                          <div class="chip">
+                            JavaScript
                           </div>
-
+                          <div class="chip">
+                            CSS
+                          </div>
+                          <div class="chip">
+                            HTML
+                          </div>
+                          <div class="chip">
+                            React
+                          </div>
                         </div>
                       </div>
 
@@ -114,21 +113,20 @@ export default class Mentorias extends Component {
 
                           </div>
 
-                          <div class="row">
-                            <div class="chip">
-                              JavaScript
-                            </div>
-                            <div class="chip">
-                              CSS
-                            </div>
-                            <div class="chip">
-                              HTML
-                            </div>
-                            <div class="chip">
-                              React
-                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                          <div class="chip">
+                            JavaScript
                           </div>
-
+                          <div class="chip">
+                            CSS
+                          </div>
+                          <div class="chip">
+                            HTML
+                          </div>
+                          <div class="chip">
+                            React
+                          </div>
                         </div>
                       </div>
 
@@ -157,21 +155,21 @@ export default class Mentorias extends Component {
 
                           </div>
 
-                          <div class="row">
-                            <div class="chip">
-                              JavaScript
-                            </div>
-                            <div class="chip">
-                              CSS
-                            </div>
-                            <div class="chip">
-                              HTML
-                            </div>
-                            <div class="chip">
-                              React
-                            </div>
-                          </div>
 
+                        </div>
+                        <div class="row justify-content-center">
+                          <div class="chip">
+                            JavaScript
+                          </div>
+                          <div class="chip">
+                            CSS
+                          </div>
+                          <div class="chip">
+                            HTML
+                          </div>
+                          <div class="chip">
+                            React
+                          </div>
                         </div>
                       </div>
 
