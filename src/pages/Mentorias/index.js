@@ -20,7 +20,7 @@ export default class Mentorias extends Component {
                 </div>
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Buscar mentores</a></li>
+                    <li class="breadcrumb-item"><a href="/">Buscar mentores</a></li>
                     <li class="breadcrumb-item active">Mentorias</li>
                   </ol>
                 </div>
@@ -95,7 +95,7 @@ export default class Mentorias extends Component {
 
                       <div class="card-footer">
                         <div class="text-center">
-                          <a href="#" class="btn btn-sm btn-agend">
+                          <a href="/" class="btn btn-sm btn-agend">
                             Agendar
                           </a>
                         </div>
@@ -137,7 +137,7 @@ export default class Mentorias extends Component {
 
                       <div class="card-footer">
                         <div class="text-center">
-                          <a href="#" class="btn btn-sm btn-agend">
+                          <a href="/" class="btn btn-sm btn-agend">
                             Agendar
                           </a>
                         </div>
@@ -180,7 +180,7 @@ export default class Mentorias extends Component {
 
                       <div class="card-footer">
                         <div class="text-center">
-                          <a href="#" class="btn btn-sm btn-agend">
+                          <a href="/" class="btn btn-sm btn-agend">
                             Agendar
                           </a>
                         </div>
@@ -195,14 +195,14 @@ export default class Mentorias extends Component {
               <div class="card-footer">
                 <nav aria-label="Contacts Page Navigation">
                   <ul class="pagination justify-content-center m-0">
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-                    <li class="page-item"><a class="page-link" href="#">8</a></li>
+                    <li class="page-item active"><a class="page-link" href="/">1</a></li>
+                    <li class="page-item"><a class="page-link" href="/">2</a></li>
+                    <li class="page-item"><a class="page-link" href="/">3</a></li>
+                    <li class="page-item"><a class="page-link" href="/">4</a></li>
+                    <li class="page-item"><a class="page-link" href="/">5</a></li>
+                    <li class="page-item"><a class="page-link" href="/">6</a></li>
+                    <li class="page-item"><a class="page-link" href="/">7</a></li>
+                    <li class="page-item"><a class="page-link" href="/">8</a></li>
                   </ul>
                 </nav>
               </div>

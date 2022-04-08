@@ -18,7 +18,7 @@ export default class Cadastrar extends Component {
                       </div>
                       <div className="row">
                         <div className='flex-column col-md-4'>
-                          <img src="dist/img/logo.png" className="mt-4" width={130} />
+                          <img src="dist/img/logo.png" className="mt-4" width={130} alt="Logo" />
                         </div>
                         <div className='flex-column col-md-8'>
                           <div className="form-group ">
