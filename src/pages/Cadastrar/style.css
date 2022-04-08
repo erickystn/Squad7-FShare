@@ -1,6 +1,36 @@
+/* Variables */
+:root{
+  --color-base:#FE5517;
+}
+
+.star-red{
+  margin-left: 2px;
+  color: red;
+}
+
+
 /* Sign up */
 .btn-signup {
   background-color: var(--color-base);
+  color: white;
   font-weight: bold;
+  margin-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+}
+.card-register{
+  width: 750px;
+}
+
+h2{
+ text-align: right;
+ color: var(--color-base);
+ font-weight: bold;
+}
+
+
+.input{
+  border-color: var(--color-base);
 
 }

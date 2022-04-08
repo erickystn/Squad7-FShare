@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import Header from '../../components/Header'
+import Menu from '../../components/Menu'
+import Footer from '../../components/Footer'
 
 export default class ContentMain extends Component {
   render() {
     return (
       <div>
+        <Header />
+        <Menu />
         {/* Content Wrapper. Contains page content */}
         <div className="content-wrapper">
           {/* Content Header (Page header) */}
@@ -97,7 +102,7 @@ export default class ContentMain extends Component {
           {/* /.content */}
         </div>
         {/* /.content-wrapper */}
-
+        <Footer />
       </div>
     )
   }

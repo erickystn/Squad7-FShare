@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import "../../style.css"
+import Header from '../../components/Header'
+import Menu from '../../components/Menu'
+import Footer from '../../components/Footer'
 
 export default class Mentorias extends Component {
   render() {
     return (
       <div>
+        <Header />
+        <Menu />
         <div class="content-wrapper">
 
           <section class="content-header">
@@ -207,6 +212,7 @@ export default class Mentorias extends Component {
           </section>
 
         </div >
+        <Footer />
       </div >
     )
   }

@@ -4,73 +4,66 @@ import "./style.css"
 export default class Cadastrar extends Component {
   render() {
 
-    const options = [
-      { value: 'nodejs', label: 'NodeJS' },
-      { value: 'strawberry', label: 'Strawberry' },
-      { value: 'vanilla', label: 'Vanilla' }
-    ]
-
     return (
       <div>
-        <div className="content-wrapper">
-          <div className="content-header">
-            <div className="container-fluid">
-              <div className="row mb-2">
-                <div className="col-sm-6">
-                  <h1 className="m-0">Cadastrar</h1>
-                </div>{/* /.col */}
-                <div className="col-sm-6">
-                  <ol className="breadcrumb float-sm-right">
-                    <li className="breadcrumb-item"><a href="#">Home</a></li>
-                    <li className="breadcrumb-item active">Dashboard v1</li>
-                  </ol>
-                </div>{/* /.col */}
-              </div>{/* /.row */}
-            </div>{/* /.container-fluid */}
-          </div>
+        <div className="register-page" >
+          <div className='card-register  col-12 col-sm-8 col-md-8'>
+            <div className='card card-solid'>
+              <div className='card-body pb-0'>
+                <div className='row justify-content-center'>
+                  <div className='col-12 col-sm-12 col-md-12 d-flex align-items-stretch flex-column'>
+                    <form>
+                      <div>
+                        <h2 class="title-register">Cadastre-se</h2>
+                      </div>
+                      <div className="row">
+                        <div className='flex-column col-md-4'>
+                          <img src="dist/img/logo.png" className="mt-4" width={130} />
+                        </div>
+                        <div className='flex-column col-md-8'>
+                          <div className="form-group ">
+                            <label htmlFor="name">Seu nome</label><span className='star-red'>*</span>
+                            <div class="input-group mb-3">
+                              <input type="text" id="name" class="form-control input" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
+                            </div>
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="position">Seu cargo</label><span className='star-red'>*</span>
+                            <div class="input-group mb-3">
+                              <input type="text" id="position" class="form-control input" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="email">E-mail</label><span className='star-red'>*</span>
+                        <div class="input-group mb-3">
+                          <input type="text" class="form-control input" placeholder="" aria-label="Digite seu email" id="email" aria-describedby="basic-addon2" />
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@fcamara.com.br</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password">Senha</label><span className='star-red'>*</span>
+                        <input type="password" class="form-control input" id="password" placeholder="" />
+                      </div>
 
-          <section class="content">
+                      <div className="form-group">
+                        <label htmlFor="password-confirmation">Confirmar senha</label><span className='star-red'>*</span>
+                        <input type="password" class="form-control input" id="password-confirmation" placeholder="" />
+                      </div>
 
-            <form>
 
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Seu nome</label>
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Seu cargo</label>
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">E-mail</label>
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
-                  <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">@fcamara.com.br</span>
+                      <div class="text-center ">
+                        <button type="submit" className="btn btn-signup">ENTRAR</button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Senha</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="" />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Confirmar senha</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="" />
-              </div>
-
-
-              <div class="text-center">
-                <button type="submit" className="btn btn-signup">ENTRAR</button>
-              </div>
-            </form>
-
-          </section>
+            </div>
+          </div>
         </div>
 
 
@@ -79,3 +72,4 @@ export default class Cadastrar extends Component {
     )
   }
 }
+
