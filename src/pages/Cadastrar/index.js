@@ -7,30 +7,30 @@ export default class Cadastrar extends Component {
     return (
       <div>
         <div className="register-page" >
-          <div className='card-register  col-12 col-sm-8 col-md-8'>
+          <div className='col-12 col-sm-8 col-md-8'>
             <div className='card card-solid'>
               <div className='card-body pb-0'>
                 <div className='row justify-content-center'>
                   <div className='col-12 col-sm-12 col-md-12 d-flex align-items-stretch flex-column'>
                     <form>
                       <div>
-                        <h2 class="title-register">Cadastre-se</h2>
+                        <h2>Cadastre-se</h2>
                       </div>
                       <div className="row">
-                        <div className='flex-column col-md-4'>
-                          <img src="dist/img/logo.png" className="mt-4" width={130} alt="Logo" />
+                        <div className='flex-column col-md-3'>
+                          <img src="dist/img/botaofoto.png" className="mt-4" width={130} alt="Logo" />
                         </div>
-                        <div className='flex-column col-md-8'>
-                          <div className="form-group ">
+                        <div className='flex-column col-md-9'>
+                          <div className="form-group">
                             <label htmlFor="name">Seu nome</label><span className='star-red'>*</span>
                             <div class="input-group mb-3">
-                              <input type="text" id="name" class="form-control input" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
+                              <input type="text" id="name" class="form-control input" placeholder="" aria-label="Digite seu nome" aria-describedby="basic-addon2" />
                             </div>
                           </div>
                           <div className="form-group">
                             <label htmlFor="position">Seu cargo</label><span className='star-red'>*</span>
                             <div class="input-group mb-3">
-                              <input type="text" id="position" class="form-control input" placeholder="" aria-label="Digite seu email" aria-describedby="basic-addon2" />
+                              <input type="text" id="position" class="form-control input" placeholder="" aria-label="Digite seu cargo" aria-describedby="basic-addon2" />
                             </div>
                           </div>
                         </div>

@@ -1,6 +1,6 @@
 /* Variables */
 :root{
-  --color-base:#FE5517;
+  --color-base:#FE4400;
 }
 
 .star-red{
@@ -14,23 +14,19 @@
   background-color: var(--color-base);
   color: white;
   font-weight: bold;
+  width: 100%;
   margin-bottom: 16px;
-  padding-left: 32px;
-  padding-right: 32px;
-
-}
-.card-register{
-  width: 750px;
 }
 
-h2{
+h2 {
  text-align: right;
  color: var(--color-base);
- font-weight: bold;
+ font-weight: 800;
 }
 
 
-.input{
-  border-color: var(--color-base);
+.input {
+  border-color: #C4C4C4;
+  border-radius: 8.3px;
 
 }
