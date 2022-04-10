@@ -1,12 +1,36 @@
-import { Flex, Box, Text, Heading, VStack, Image, Button } from '@chakra-ui/react'
-import React from 'react'
+import { Flex, Box, Text, Heading, VStack, Image, Button, useBreakpointValue } from '@chakra-ui/react'
+import { useState } from 'react'
 import iconWave from '../../assets/img/iconWave.png';
+import ButtonSkill from '../../components/ButtonSkill/ButtonSkill';
+import poolOfSkills from '../../services/poolOfSkills.js'
 
 const SelecionarSkill = () => {
+  const [skillsSelected, setSkillsSelected] = useState([]);
+  const [active, setActive] = useState(false);
+
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    sm: true
+  });
+
+  const handleAddOrRemoveSkill = (value) => {
+    const skillList = skillsSelected;
+
+    if (skillList.includes(value)) {
+      skillList.splice(skillList.indexOf(value), 1);
+      setSkillsSelected(skillList)
+      setActive(!active)
+    } else {
+      skillList.push(value);
+      setSkillsSelected(skillList)
+      setActive(!active)
+    }
+  }
+
   return (
-    <Flex direction="column" h="100vh">
+    <Flex direction="column" minHeight="100vh" bg="white">
       <Flex
-        h="100vh"
+        minHeight="100vh"
         direction="column"
         maxWidth={1480}
         justify="space-between"
@@ -15,34 +39,38 @@ const SelecionarSkill = () => {
         p="45"
         bg="#f1f2f5"
       >
-        <Flex direction="row" justify="space-between" align="center" w="100%">
-          <Image
-            src={iconWave}
-            w="200"
-            h="100"
-          />
+        <Flex direction="row" justify={["center", "space-between"]} align="center" w="100%">
+          {isWideVersion ?
+            <Image
+              src={iconWave}
+              w="200"
+              h="100"
+            />
+          : 
+          <></>
+          }
           <Heading
             as="h1"
             size="lg"
             color='#FE4400'
+            align="center"
           >
             Selecione as habilidades que você mais domina!
           </Heading>
         </Flex>
 
         <Flex direction="row" justify="center" align="center" maxWidth={1480} my={10} flexWrap="wrap">
-          <Button
-            m={5}
-            type="button"
-            bg="#ffff"
-            color="#000000"
-            size="md"
-            width="180px"
-            _hover={{ bg: '#FE4400', color: '#ffff' }}
-            css={{ 'boxShadow': '3px 3px 7px #615D5D' }}
-          >
-            RubyOnRails
-          </Button>
+          {poolOfSkills.map((skill, index) => {
+            return (
+              <ButtonSkill
+                key={index}
+                value={skill}
+                handleFunction={handleAddOrRemoveSkill}
+                active={active}
+              />
+            )
+          })}
+
         </Flex>
 
         <VStack width="100%" justify="space-between">
@@ -57,7 +85,7 @@ const SelecionarSkill = () => {
           >
             FINALIZAR CADASTRO!
           </Button>
-          <Box>
+          <Box align="center">
             <Text as="strong" color="#36357E">Não quer adicionar suas habilidades? </Text>
             <Text
               as="a"
