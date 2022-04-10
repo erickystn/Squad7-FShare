@@ -10,6 +10,10 @@ const user = db.define(
             allowNull: false,
             primaryKey: true
         },
+        nm_pic: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
         nm_name: {
             type: Sequelize.STRING,
             allowNull: false
@@ -29,6 +33,15 @@ const user = db.define(
         cd_password: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+        nm_url: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+
+        nm_skills: {
+            type: Sequelize.STRING,
+            allowNull: true
         }
     }
 )

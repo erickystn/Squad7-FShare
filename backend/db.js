@@ -8,7 +8,7 @@ const banco = new Sequelize('postgres://pfobqzkevfubql:a649f37c23b4c22d4a98b1097
 })
 
 banco.authenticate().then(() => {
-    console.log("Conectado.")
+    console.log("Autenticado no Banco.")
 }).catch((e) => {
     console.log("Erro.", e)
 })

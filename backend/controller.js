@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const userService = require('./service/userService.js')
-const skillService = require('./service/skillService.js')
 const bP= require('body-parser')
 
 
@@ -9,51 +8,54 @@ app.use(bP.urlencoded({ extended: true}))
 
 // cadastro usuario
 
-app.post('/userSignUp', async ( req, resp)=>{ // receber os valores > enviar para o service > persistir com o Dao
-    const usuario = req.body
-    const resultado = userService.create(usuario)
+app.post('/userSignUp', (req, res) => { // receber os valores > enviar para o service > persistir com o Dao
+    const usuario = req.body // recebe como obj os valores 
 
-    resp.send(resultado.codigo)
-    
-   // console.log(usuario)
+    userService.create(usuario)
+        .then(resultado => {
+            if (resultado.id) res.send(resultado)
+            else res.status(400).send(resultado)
+        }) // envia ao service p verificacao e o resultado sera enviado a pagina com 200(padrao) ou 400 (se erro)
+
+
 })
 
 // cadastro skills
 
-app.post('/skill', async ( req, resp)=>{ 
-    const skills= req.body.skills
-    const idUser = req.body.idUser
-    const result = skillService.insertSkill(idUser, skills)
-    
-    resp.send(result)
-    
+app.post('/skill', (req, res) => { // recebe do front 
+    const cd_user = req.body.cd_user
+    const nm_skill = Array.isArray(req.body.nm_skills) ? req.body.nm_skills : [req.body.nm_skills]
+
+    userService.addSkill(cd_user, nm_skill).then(resultado => res.send(resultado))
+
 })
 
 
-// buscar usuario
+// // buscar usuario
+// perfil
+app.get('/user', (req, res) => {
+    const cd_id = req.body.id;
 
-app.get('/user:id', async (req, resp,) =>{
-    const idUser = req.params.id
-    const result = userService.getUser(idUser)
+    userService.getUser(cd_id).then(result => res.send(result))
 
-    resp.send(result)
 
 })
 
 // pesquisar stack
 
-app.get('/query:stack', (req, resp) =>{
+app.get('/query', (req, resp) => {
 
-    const busca = req.params.stack
-    const result = userService.getUsers(busca)
+    const busca = req.body.stack
+    userService.query(busca).then(result => resp.send(result))
 
-    resp.send(result)
-    
+
 })
+
+//
 
 
 // alteracao, delecao 
 
 
-app.listen(8080, () => console.log('Conexao Bem sucedida'))
+app.listen(8080, () => console.log('Conexao Express Bem sucedida'))
 
