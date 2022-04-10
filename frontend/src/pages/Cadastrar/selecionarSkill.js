@@ -44,6 +44,7 @@ const SelecionarSkill = () => {
               src={iconWave}
               w="200"
               h="100"
+              alt="Homem vetorizado selecionando cards"
             />
             :
             <></>
