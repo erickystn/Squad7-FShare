@@ -6,7 +6,7 @@ import poolOfSkills from '../../services/poolOfSkills.js'
 
 const SelecionarSkill = () => {
   const [skillsSelected, setSkillsSelected] = useState([]);
-  const [active, setActive] = useState(false);
+  const [newRender, setNewRender] = useState(false);
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -19,12 +19,11 @@ const SelecionarSkill = () => {
     if (skillList.includes(value)) {
       skillList.splice(skillList.indexOf(value), 1);
       setSkillsSelected(skillList)
-      setActive(!active)
     } else {
       skillList.push(value);
       setSkillsSelected(skillList)
-      setActive(!active)
     }
+    setNewRender(!newRender)
   }
 
   return (
@@ -46,8 +45,8 @@ const SelecionarSkill = () => {
               w="200"
               h="100"
             />
-          : 
-          <></>
+            :
+            <></>
           }
           <Heading
             as="h1"
@@ -62,12 +61,24 @@ const SelecionarSkill = () => {
         <Flex direction="row" justify="center" align="center" maxWidth={1480} my={10} flexWrap="wrap">
           {poolOfSkills.map((skill, index) => {
             return (
-              <ButtonSkill
-                key={index}
-                value={skill}
-                handleFunction={handleAddOrRemoveSkill}
-                active={active}
-              />
+              <Box key={index}>
+                {skillsSelected.includes(skill) ?
+                  <ButtonSkill
+                    key={index}
+                    value={skill}
+                    handleFunction={handleAddOrRemoveSkill}
+                    isActive={true}
+                  />
+                  :
+                  <ButtonSkill
+                    key={index}
+                    value={skill}
+                    handleFunction={handleAddOrRemoveSkill}
+                    isActive={false}
+                  />
+                }
+
+              </Box>
             )
           })}
 

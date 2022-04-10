@@ -1,13 +1,13 @@
 import { Button } from '@chakra-ui/react'
 
-const ButtonSkill = ({value, active, handleFunction}) => {
+const ButtonSkill = ({value, isActive, handleFunction}) => {
   return (
     <Button
       value={value}
       onClick={(e) => handleFunction(e.target.value)}
       m={5}
       type="button"
-      bg={active ? "#FE4400" : '#FFF'}
+      bg={isActive ? "#FE4400" : '#FFF'}
       color="#000000"
       size="md"
       width="180px"
