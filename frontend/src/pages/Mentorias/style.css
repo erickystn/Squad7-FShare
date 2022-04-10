@@ -9,17 +9,23 @@
   
 }
 
-
 /* Header */
-.icon-logout {
-  width: 39px;
-  height: 24px;
+.box-logout{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.2rem;
 }
-
 .text-logout {
+  display: inline;
   color: black;
   font-size:1.25em;
   font-weight: 400;
+}
+.icon-logout {
+  width: 39px;
+  height: 24px;
+  margin-left: 5px;
 }
 
 /* Search */

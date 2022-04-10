@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./style.css"
@@ -10,17 +8,18 @@ export default function Mentorias() {
 
       <section class="content padding-header">
 
-        {/* Header */}
         <div>
+        {/* Header */}
           <div className='row justify-content-between'>
             <h2>Buscar mentor</h2>
             <Link to="/">
-              <div className='row'>
-                <p className='text-logout'>Logout</p>
-                <img className='icon-logout' src='dist/img/logout.png' />
+              <div className='box-logout'>
+                <span className='text-logout'>Logout</span>
+                <img className='icon-logout' src='dist/img/logout.png' alt="Icone de saída" />
               </div>
             </Link>
           </div>
+        {/* Fim Header */}
 
           {/* Seacrh bar */}
           <div class="row search-bar">
@@ -57,7 +56,7 @@ export default function Mentorias() {
                   </div>
                   <div class="p-3 info-card">
                     <h2 class="mentor-name"><b>Rihanna Silva</b></h2>
-                    <p class="text-muted text-sm">Dev na BoysCry</p>
+                    <p class="text-muted text-sm">Dev na BoysDon`tCry</p>
                     <a href="/" class="btn btn-sm btn-profile">
                       Ver perfil
                     </a>
