@@ -4,7 +4,28 @@
 }
 
 .teste {
-  background-color: aqua;
+  /* background-color: aqua; */
+  width: 35.1rem;
+  
+}
+
+/* Header */
+.box-logout{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.2rem;
+}
+.text-logout {
+  display: inline;
+  color: black;
+  font-size:1.25em;
+  font-weight: 400;
+}
+.icon-logout {
+  width: 39px;
+  height: 24px;
+  margin-left: 5px;
 }
 
 /* Search */
@@ -21,13 +42,12 @@
   color: black;
   font-weight: 400;
   font-size: 20px;
+  width: 11rem;
 }
 
 /* Mentor Card */
 
-.height-card{
-  height: 210px;
-}
+
 .chip {
 
   margin-bottom: 15px;
@@ -41,44 +61,32 @@
   color: black;
   text-align: center;
   width: 100px;
+  align-self: center;
 
 
 }
 
-.shadow-card{
+.card-aria{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  
 
 }
 
-.info-card{
-  margin-top: 26px;
-}
 
 .btn-profile {
   background-color: rgba(98, 99, 171, 1);
   color: white;
-  font-size: 20px;
+  font-size: 1em;
   font-weight: 800;
-  padding-left: 48px;
-  padding-right: 48px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  width: 100%;
 }
 
 h2 {
   text-align: left !important;
 }
 
-.icon-logout {
-  width: 39px;
-  height: 24px;
-}
 
-.text-logout {
-  color: black;
-  font-size:1.25em;
-  font-weight: 400;
-}
 
 .padding-header{
   padding-top: 27px;
@@ -86,22 +94,36 @@ h2 {
   padding-right: 105px;
 }
 
-.padding-stacks{
-  padding-left: 24px;
-  padding-right: 24px;
-  background-color: rgba(98, 99, 171, 1)
 
-}
 
 .mentor-name{
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 600;
   line-height: 36.57px;
   color: rgba(42, 41, 98, 1);
-  ;
+  
 }
 
 .profile-img{
   width: 205px;
   height: 181px;
+}
+
+.card-size{
+  width: 35.1rem;
+}
+
+.area-img{
+  width: 33.88%; 
+}
+
+.info-card{
+  margin-top: 26px;
+  width: 39.3%;
+}
+
+.padding-stacks{
+  background-color: rgba(98, 99, 171, 1);
+  width: 25.61%;
+
 }
