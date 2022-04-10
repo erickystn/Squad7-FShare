@@ -62,8 +62,7 @@ const Inicio = () => {
                   w='55%'
                   mt={64}
                   ml={48}
-                  css={{
-                  }}
+                  alt="Logotipo da plataforma"
                 />
               </Box>
 
@@ -91,6 +90,7 @@ const Inicio = () => {
                 w='60%'
                 mt={52}
                 ml={10}
+                alt="Logotipo da plataforma"
               />
             </Box>
           }
@@ -108,6 +108,7 @@ const Inicio = () => {
           minWidth="335px"
           src={img1}
           w='40%'
+          alt="Duas mulheres vetorizadas segurando um ícone de conectividade"
         />
 
         <VStack align="center" mb={{ base: "80", lg: "24" }} css={{ "z-index": "1" }}>
