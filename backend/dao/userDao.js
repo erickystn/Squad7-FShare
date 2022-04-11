@@ -2,8 +2,6 @@ const {Op, Sequelize} = require('sequelize')
 const db = require("../db.js")
 const User = require("../models/User.js")
 
-
-
 const cadastrar = async (usuario) => {
     try {
 
@@ -17,33 +15,21 @@ const cadastrar = async (usuario) => {
     }
 }
 
-const checkUser = async (id) => {
+const checkEmail = async (usuario) => {
 
     try {
 
         await db.sync();
 
-        const user = await User.findByPk(123);
-        if (user === null) {
-            console.log('Nao encontrado');
-            return false;
-        } else {
-            console.log(user instanceof User);
-            return true
+        const user = await User.findOne( { where: { nm_email: usuario.nm_email } } )
 
-        }
-
-
-
-
-
+        return user
 
     } catch (erro) {
         console.log(erro)
     }
 
 }
-
 
 const addSkill = async (cd_user, skills) => {
 
@@ -61,16 +47,15 @@ const getUser = async (cd_id) => {
     const result = await User.findByPk(cd_id)
     const user = {}
     user.cd_id = result.cd_id;
-    user.nm_pic = result.nm_pic? result.cd_id : "No Photo";
+    user.nm_pic = result.nm_pic? result.nm_pic : "No Photo";
     user.nm_name = result.nm_name;
     user.nm_description = result.nm_description;
     user.nm_role = result.nm_role;
     user.nm_url = result.nm_url ? result.nm_url : "No URL";
-    user.nm_skills = result.nm_skills.split(",");
+    user.nm_skills = result.nm_skills ? result.nm_skills.split(",") : "No Skill"; 
     console.log(user)
 
     return user
-
 
 }
 
@@ -90,8 +75,27 @@ const queryUsers = async (query)=>{
 }
 
 
+module.exports = { cadastrar, addSkill, getUser, queryUsers, checkEmail }
 
+/*
+const checkUser = async (id) => {
 
+    try {
 
+        await db.sync();
 
-module.exports = { cadastrar, addSkill, getUser, queryUsers }
+        const user = await User.findByPk(123); 
+        if (user === null) {
+            console.log('Nao encontrado');
+            return false;
+        } else {
+            console.log(user instanceof User);
+            return true;
+        }
+
+    } catch (erro) {
+        console.log(erro)
+    }
+
+}
+*/
