@@ -1,3 +1,4 @@
+import { Button, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import "./style.css"
 
@@ -13,19 +14,19 @@ const Cadastrar = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     
-    if(!dataValidation()){
+    const dataValidated = dataValidation();
+
+    if(!dataValidated){
       return
     }
 
     const data = {
-      email: `${email + domainFcamara}`,
-      password,
-      name,
-      position,
+      email: `${dataValidated.email + domainFcamara}`,
+      password: dataValidated.password,
+      name: dataValidated.name,
+      position: dataValidated.position,
     };
     alert(`cadastro aprovado`)
-
-    console.log(data)
 
     clearFields()
     //await connect(data);
@@ -40,23 +41,30 @@ const Cadastrar = () => {
   }
 
   function dataValidation(){
+    let dataValidated = {
+      name: "", 
+      email: "", 
+      position: "", 
+      password: "",
+    }
+
     const emailRegex = /@/
     
-    const nameValidated = name.trim()
-    const positionValidated = position.trim()
+    dataValidated.name = name.trim()
+    dataValidated.position = position.trim()
+    dataValidated.password = password.trim()
     const emailValidated = email.trim()
     const emailRegexValidated = emailRegex.exec(emailValidated)
-    const passwordValidated = password.trim()
     const passwordConfirmationValidated = passwordConfirmation.trim()
 
 
-    if(nameValidated === ""){
+    if(dataValidated.name === ""){
       alert('Preencha o campo "Seu nome"')
       clearFields()
       return false
     }
 
-    if(positionValidated === ""){
+    if(dataValidated.position === ""){
       alert('Preencha o campo "Seu cargo"')
       clearFields()
       return false
@@ -70,9 +78,11 @@ const Cadastrar = () => {
       alert('Preencha apenas o login do seu e-mail')
       clearFields()
       return false
+    } else {
+      dataValidated.email = emailValidated;
     }
     
-    if(passwordValidated === ""){
+    if(dataValidated.password === ""){
       alert('Informe uma senha')
       clearFields()
       return false
@@ -80,18 +90,13 @@ const Cadastrar = () => {
       alert('Confirmação de senha deve ser preenchida')
       clearFields()
       return false
-    } else if(passwordValidated !== passwordConfirmationValidated){
+    } else if(dataValidated.password !== passwordConfirmationValidated){
       alert('Senha e confirmação de senha devem ser iguais')
       clearFields()
       return false
     }
 
-    setEmail(emailValidated)
-    setPassword(passwordValidated)
-    setName(nameValidated)
-    setPosition(positionValidated)
-
-    return true
+    return dataValidated
   }
 
   return (
@@ -99,9 +104,9 @@ const Cadastrar = () => {
       <div className="register-page box-register" >
         <div className='col-10 col-sm-10 col-md-10 d-flex align-items-stretch flex-column'>
 
-          <h2 className="title-register-page">
+          <Text as="h1" fontSize="3xl" fontWeight="bold" align="right" color="#FE4400">
             Cadastre-se
-          </h2>
+          </Text>
 
           <form onSubmit={handleSubmit}>
             <div className="row">
@@ -222,12 +227,17 @@ const Cadastrar = () => {
 
 
             <div>
-              <button
+              <Button
                 type="submit"
                 className="btn-signup"
+                bg="#FE4400"
+                color="white"
+                w="100%"
+                p={6}
+                _hover={{bg: "#FE4400", color: "#000"}}
               >
-                Entrar
-              </button>
+                <Text as="strong" fontSize="2xl">Entrar</Text>
+              </Button>
             </div>
 
           </form>
@@ -238,4 +248,3 @@ const Cadastrar = () => {
 }
 
 export default Cadastrar;
-
