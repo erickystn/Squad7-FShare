@@ -30,6 +30,7 @@ const Cadastrar = () => {
 
     clearFields()
     //await connect(data);
+    console.log(data)
   }
 
   function clearFields() {
