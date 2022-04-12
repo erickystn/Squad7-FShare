@@ -1,0 +1,51 @@
+.total{
+  width: 100vw;
+  height: 200vh;
+  background-color: #FE4400;
+}
+
+.img-profile{
+  width:18em;
+  height: 16em;
+  margin-top: 1.4em; 
+  margin-bottom: 0.8em;
+  margin-left: 4.6em;
+}
+
+.title-profile{
+  color: #36357E;
+  font-size: 40px;
+  font-weight: 800;
+  margin-left: 7rem;
+  margin-bottom: 0.3rem;
+;
+}
+
+.about-profile{
+  color: black;
+  font-size: 1.8em;
+  margin-bottom: 0;
+  margin: 0;
+  line-height: 37px;
+  margin-right: 8.3rem;
+  margin-left: 7rem;
+  /* text-align: right; */
+}
+
+
+.icons-page{
+  width: 2.9em;
+  height: 2.3em;
+  margin-left: 16px;
+  margin-top: 12px;
+
+}
+
+.box-calendly{
+  background-color: #FE4400;
+  align-self: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  
+}
