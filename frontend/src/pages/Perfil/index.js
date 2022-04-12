@@ -1,14 +1,13 @@
 import React from 'react'
-import Calendly from '../../components/Calendly'
+import {CalendlyFunctional} from '../../components/Calendly'
 import "./style.css"
 
 
 export default function Perfil() {
   return (
-
     <div className='total row flex-row col-12'>
+      
       <div className='col-12 col-sm-8 col-md-8'>
-
         <div>
           <img src='dist/img/fabio.png' className='img-profile' />
           <div className='col-12'>
@@ -31,10 +30,9 @@ export default function Perfil() {
       </div>
 
       <div className=' col-12 col-sm-4 col-md-4 box-calendly'>
-        <Calendly />
+        <CalendlyFunctional />
       </div>
     </div >
-
   )
 }
 
