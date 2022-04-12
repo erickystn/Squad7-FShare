@@ -3,6 +3,8 @@ import { useState } from 'react'
 import iconWave from '../../assets/img/iconWave.png';
 import ButtonSkill from '../../components/ButtonSkill/ButtonSkill';
 import poolOfSkills from '../../services/poolOfSkills.js'
+import axios from 'axios'
+import { Router } from 'react-router-dom';
 
 const SelecionarSkill = () => {
   const [skillsSelected, setSkillsSelected] = useState([]);
@@ -12,6 +14,8 @@ const SelecionarSkill = () => {
     base: false,
     sm: true
   });
+
+  const route = Router;
 
   const handleAddOrRemoveSkill = (value) => {
     const skillList = skillsSelected;
@@ -25,7 +29,23 @@ const SelecionarSkill = () => {
     }
     setNewRender(!newRender)
   }
+  
+  async function handleSubmitSkills() {
+    const data = {
+      cd_id: 1,
+      nm_skills: skillsSelected
+    }
 
+    const { response } = await axios.post(`https:localhost:8080/skill`, data)
+    console.log(response)
+
+    if (response.status === 200) {
+      route.push('/perfil')
+    } else {
+      console.log(response)
+    }
+  }
+  
   return (
     <Flex direction="column" minHeight="100vh" bg="white">
       <Flex
@@ -93,9 +113,10 @@ const SelecionarSkill = () => {
             size="lg"
             _hover={{ bg: '#B93200', color: '#ffff' }}
             css={{ 'boxShadow': '3px 3px 7px #615D5D' }}
+            onClick={() => handleSubmitSkills()}
 
           >
-            FINALIZAR CADASTRO!
+            Finalizar Cadastro!
           </Button>
           <Box align="center">
             <Text as="strong" color="#36357E">Não quer adicionar suas habilidades? </Text>

@@ -1,6 +1,9 @@
-import { Button, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
+import { Button, Text } from '@chakra-ui/react';
+import axios from 'axios';
+
 import "./style.css"
+import { Router } from 'react-router-dom';
 
 const Cadastrar = () => {
   const [email, setEmail] = useState("");
@@ -10,13 +13,14 @@ const Cadastrar = () => {
   const [position, setPosition] = useState("");
 
   const domainFcamara = "@fcamara.com.br"
+  const route = Router;
 
   async function handleSubmit(event) {
     event.preventDefault();
-    
+
     const dataValidated = dataValidation();
 
-    if(!dataValidated){
+    if (!dataValidated) {
       return
     }
 
@@ -26,11 +30,22 @@ const Cadastrar = () => {
       name: dataValidated.name,
       position: dataValidated.position,
     };
-    alert(`cadastro aprovado`)
-
+    
     clearFields()
-    //await connect(data);
-    console.log(data)
+    await connectBackend(data);
+    
+    alert(`cadastro aprovado`)
+  }
+
+  async function connectBackend(data) {
+    const { response } = await axios.post(`https:localhost:8080/skill`, data)
+    console.log(response)
+
+    if (response.status === 201) {
+      route.push('/skills')
+    } else {
+      console.log(response)
+    }
   }
 
   function clearFields() {
@@ -41,16 +56,16 @@ const Cadastrar = () => {
     setPosition("")
   }
 
-  function dataValidation(){
+  function dataValidation() {
     let dataValidated = {
-      name: "", 
-      email: "", 
-      position: "", 
+      name: "",
+      email: "",
+      position: "",
       password: "",
     }
 
     const emailRegex = /@/
-    
+
     dataValidated.name = name.trim()
     dataValidated.position = position.trim()
     dataValidated.password = password.trim()
@@ -59,39 +74,39 @@ const Cadastrar = () => {
     const passwordConfirmationValidated = passwordConfirmation.trim()
 
 
-    if(dataValidated.name === ""){
+    if (dataValidated.name === "") {
       alert('Preencha o campo "Seu nome"')
       clearFields()
       return false
     }
 
-    if(dataValidated.position === ""){
+    if (dataValidated.position === "") {
       alert('Preencha o campo "Seu cargo"')
       clearFields()
       return false
     }
-    
-    if(emailValidated === ""){
+
+    if (emailValidated === "") {
       alert('Preencha o campo "E-mail"')
       clearFields()
       return false
-    } else if(emailRegexValidated){
+    } else if (emailRegexValidated) {
       alert('Preencha apenas o login do seu e-mail')
       clearFields()
       return false
     } else {
       dataValidated.email = emailValidated;
     }
-    
-    if(dataValidated.password === ""){
+
+    if (dataValidated.password === "") {
       alert('Informe uma senha')
       clearFields()
       return false
-    } else if( passwordConfirmationValidated === ""){
+    } else if (passwordConfirmationValidated === "") {
       alert('Confirmação de senha deve ser preenchida')
       clearFields()
       return false
-    } else if(dataValidated.password !== passwordConfirmationValidated){
+    } else if (dataValidated.password !== passwordConfirmationValidated) {
       alert('Senha e confirmação de senha devem ser iguais')
       clearFields()
       return false
@@ -235,7 +250,7 @@ const Cadastrar = () => {
                 color="white"
                 w="100%"
                 p={6}
-                _hover={{bg: "#FE4400", color: "#000"}}
+                _hover={{ bg: "#FE4400", color: "#000" }}
               >
                 <Text as="strong" fontSize="2xl">Entrar</Text>
               </Button>
