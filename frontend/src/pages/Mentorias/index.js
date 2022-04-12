@@ -48,6 +48,7 @@ const Mentorias = () => {
       align="center"
       mx="auto"
       p="45"
+      bg="white"
     >
       {/* Header */}
       <Flex align="center" justify="space-between" direction="row" w="100%">
@@ -162,7 +163,7 @@ const Mentorias = () => {
               key={mentor.id}
               name={mentor.name}
               id={mentor.id}
-              position={mentor.postion}
+              position={mentor.position}
               stack={mentor.stack}
             />
           )
