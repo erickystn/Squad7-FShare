@@ -3,7 +3,14 @@ const poolOfSkills = [
   "NodeJs",
   "ReactJs",
   "Rust",
-  "Laravel"
+  "Laravel",
+  "Angular",
+  "Swift",
+  "Django",
+  "VueJs",
+  "MySQL",
+  "AWS",
+  "Azure",
 ];
 
 export default poolOfSkills;

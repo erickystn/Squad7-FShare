@@ -130,7 +130,7 @@ const Inicio = () => {
             <Text as="strong" color="#ffff">Já tem uma conta? </Text>
             <Text
               as="a"
-              href="/cadastrar"
+              href="/mentorias"
               color="#ffff"
               css={{ "cursor": "pointer" }}>
               Clique aqui

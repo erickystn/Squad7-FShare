@@ -146,11 +146,11 @@ const Mentorias = () => {
           handleFunction={handleSearchMentorForStack}
         />
         <ButtonSkill
-          value="C#"
+          value="Laravel"
           handleFunction={handleSearchMentorForStack}
         />
         <ButtonSkill
-          value="Javascript"
+          value="Rust"
           handleFunction={handleSearchMentorForStack}
         />
       </Flex>

@@ -1,5 +1,4 @@
 import { Switch } from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
 import Mentorias from '../pages/Mentorias'
 import Cadastrar from '../pages/Cadastrar'
 import Perfil from '../pages/Perfil'
@@ -14,9 +13,8 @@ export default function Routes() {
       <Route exact path="/" component={Inicio} />
       <Route exact path="/cadastrar" component={Cadastrar} />
       <Route exact path="/skills" component={SelecionarSkill} />
-      <Route exact path="/perfil" component={Perfil} isPrivate/>
-      <Route exact path="/dashboard" component={Dashboard} isPrivate />
-      <Route exact path="/mentorias" component={Mentorias} isPrivate />
+      <Route exact path="/perfil" component={Perfil} />
+      <Route exact path="/mentorias" component={Mentorias}  />
     </Switch>
   )
 }

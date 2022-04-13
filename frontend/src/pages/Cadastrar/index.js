@@ -116,7 +116,7 @@ const Cadastrar = () => {
   }
 
   return (
-    <main>
+    <main className='main-register'>
       <div className="register-page box-register" >
         <div className='col-10 col-sm-10 col-md-10 d-flex align-items-stretch flex-column'>
 

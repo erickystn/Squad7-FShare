@@ -7,23 +7,23 @@ export default function RouteWrapper({
 }) {
 
   const loading = false;
-  const signed = false;
+//  const signed = true;
 
   if (loading) {
     return (
       <div></div>
     )
   }
-
+/*
   if (!signed && isPrivate) {
     return <Redirect to="/" />
   }
 
   if (signed && !isPrivate) {
-    return <Redirect to="/dashboard" />
+    return <Redirect to="/mentorias" />
   }
 
-
+*/
   return (
     <Route
       {...rest}

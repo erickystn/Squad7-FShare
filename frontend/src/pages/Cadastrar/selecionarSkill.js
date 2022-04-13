@@ -1,4 +1,4 @@
-import { Flex, Box, Text, Heading, VStack, Image, Button, useBreakpointValue } from '@chakra-ui/react'
+import { Flex, Box, Text, Heading, VStack, Image, Button, useBreakpointValue, Link} from '@chakra-ui/react'
 import { useState } from 'react'
 import iconWave from '../../assets/img/iconWave.png';
 import ButtonSkill from '../../components/ButtonSkill/ButtonSkill';
@@ -29,7 +29,7 @@ const SelecionarSkill = () => {
     }
     setNewRender(!newRender)
   }
-  
+
   async function handleSubmitSkills() {
     const data = {
       cd_id: 1,
@@ -45,7 +45,7 @@ const SelecionarSkill = () => {
       console.log(response)
     }
   }
-  
+
   return (
     <Flex direction="column" minHeight="100vh" bg="white">
       <Flex
@@ -120,12 +120,14 @@ const SelecionarSkill = () => {
           </Button>
           <Box align="center">
             <Text as="strong" color="#36357E">Não quer adicionar suas habilidades? </Text>
-            <Text
-              as="a"
-              color="#36357E"
-              css={{ "cursor": "pointer" }}>
-              Clique aqui
-            </Text>
+            <Link href="/mentorias">
+              <Text
+                as="a"
+                color="#36357E"
+                >
+                Clique aqui
+              </Text>
+            </Link>
           </Box>
         </VStack>
 
