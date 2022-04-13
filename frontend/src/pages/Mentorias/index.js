@@ -1,139 +1,176 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Flex, List, ListItem, Text, Link } from '@chakra-ui/react'
+import ButtonSkill from '../../components/ButtonSkill/ButtonSkill'
+import CardMentor from '../../components/Card/Mentor'
+import { getMentor } from '../../services/skillServices'
+import poolOfSkills from '../../services/poolOfSkills.js'
 import "./style.css"
 
-export default function Mentorias() {
+const Mentorias = () => {
+  const [mentors, setMentors] = useState([]);
+  const [search, setSearch] = useState('');
+  const [suggestionTech, setSuggestionTech] = useState([]);
+
+  useEffect(() => {
+    setMentors(getMentor());
+  }, [])
+
+  useEffect(() => {
+    getTechs();
+  }, [search])
+
+  function getTechs() {
+    const results = poolOfSkills.filter(skill => skill.toLowerCase().indexOf(search) !== -1);
+    if (results.length > 0) {
+      setSuggestionTech(results)
+    } else {
+      setSuggestionTech(["Nenhum resultado encontrado"])
+    }
+  }
+
+  function handleSearchMentorForStack(tech) {
+    const arrMentors = getMentor()
+    const mentorWithTech = arrMentors.filter(mentor => mentor.stack.includes(tech))
+
+    if (mentorWithTech.length > 0) {
+      setMentors(mentorWithTech)
+    } else {
+      setSearch("")
+    }
+    setSearch("")
+  }
+
   return (
-    <div>
+    <Flex
+      minHeight="100vh"
+      direction="column"
+      maxWidth={1480}
+      align="center"
+      mx="auto"
+      p="45"
+      bg="white"
+    >
+      {/* Header */}
+      <Flex align="center" justify="space-between" direction="row" w="100%">
+        <Text
+          as="strong"
+          fontSize="4xl"
+          color="#FE4400"
+          css={{ "lineHeight": "40px" }}
+        >
+          Buscar mentor
+        </Text>
+        <Link href="/" _hover={{ color: "#FE4400" }}>
+          <Flex>
+            <text as="span" >Logout</text>
+            <img className='icon-logout' src='dist/img/logout.png' alt="Icone de saída" />
+          </Flex>
+        </Link>
+      </Flex>
 
-      <section class="content padding-header">
-
-        <div>
-        {/* Header */}
-          <div className='row justify-content-between'>
-            <h2>Buscar mentor</h2>
-            <Link to="/">
-              <div className='box-logout'>
-                <span className='text-logout'>Logout</span>
-                <img className='icon-logout' src='dist/img/logout.png' alt="Icone de saída" />
-              </div>
-            </Link>
+      {/* Seacrh bar */}
+      <Flex my="5" direction="column" w="100%">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Buscar Habilidade"
+            aria-label="Buscar Habilidade"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              onClick={(e) => handleSearchMentorForStack(e)}
+            >
+              <i className="fas fa-search fa-fw" />
+            </button>
           </div>
-        {/* Fim Header */}
-
-          {/* Seacrh bar */}
-          <div class="row search-bar">
-            <div class="col-12 col-sm-12 col-md-12 d-flex align-items-stretch flex-column">
-
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Buscar por nome" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button"><i className="fas fa-search fa-fw" /></button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Stacks */}
-          <div class="row justify-content-between">
-            <button className='btn btn-stacks'>NodeJS</button>
-            <button className='btn btn-stacks'>React</button>
-            <button className='btn btn-stacks'>CSS</button>
-            <button className='btn btn-stacks'>MySQL</button>
-            <button className='btn btn-stacks'>C#</button>
-            <button className='btn btn-stacks'>Javascript</button>
-          </div>
-
-          {/* Stacks Mentor Cards */}
-
-          <div className='row justify-content-between'>
-            <div className='card-size'>
-              <div class="card card-area">
-                <div class="row">
-                  <div class="area-img p-3">
-                    <img src="dist/img/rihana.png" alt="user-avatar" class="img-circle img-fluid profile-img" />
-                  </div>
-                  <div class="p-3 info-card">
-                    <h2 class="mentor-name"><b>Rihanna Silva</b></h2>
-                    <p class="text-muted text-sm">Dev na BoysDon`tCry</p>
-                    <a href="/" class="btn btn-sm btn-profile">
-                      Ver perfil
-                    </a>
-                  </div>
-
-                  <div class="d-flex flex-column justify-content-center padding-stacks">
-                    <div class="chip">
-                      Oracle
-                    </div>
-                    <div class="chip">
-                      Python
-                    </div>
-                    <div class="chip">
-                      C#
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Infos Mentor Cards */}
-            <div className='card-size'>
-              <div class="card shadow-card">
-                <div class="row">
-                  <div class="area-img p-3">
-                    <img src="dist/img/fabio.png" alt="user-avatar" class="img-circle img-fluid profile-img" />
-                  </div>
-                  <div class="p-3 info-card">
-                    <h2 class="mentor-name"><b>Fabio Costa</b></h2>
-                    <p class="text-muted text-sm">Dev na FCamara</p>
-                    <a href="/" class="btn btn-sm btn-profile">
-                      Ver perfil
-                    </a>
-                  </div>
-
-                  <div class="d-flex flex-column justify-content-center padding-stacks">
-                    <div class="chip">
-                      NodeJS
-                    </div>
-                    <div class="chip">
-                      Java
-                    </div>
-                    <div class="chip">
-                      SQL
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        {/* <div class="card-footer">
-          <nav aria-label="Contacts Page Navigation">
-            <ul class="pagination justify-content-center m-0">
-              <li class="page-item active"><a class="page-link" href="/">1</a></li>
-              <li class="page-item"><a class="page-link" href="/">2</a></li>
-              <li class="page-item"><a class="page-link" href="/">3</a></li>
-              <li class="page-item"><a class="page-link" href="/">4</a></li>
-              <li class="page-item"><a class="page-link" href="/">5</a></li>
-              <li class="page-item"><a class="page-link" href="/">6</a></li>
-              <li class="page-item"><a class="page-link" href="/">7</a></li>
-              <li class="page-item"><a class="page-link" href="/">8</a></li>
-            </ul>
-          </nav>
-        </div> */}
+        {search ?
+          <Flex
+            direction="row"
+            borderRadius={3}
+            p={1}
+            mt={10}
+            w="100%"
+            maxWidth={1180}
+            align="flexStart"
+            css={{
+              "z-index": "10",
+              "position": "fixed",
+              "backgroundColor": "rgba(0, 0, 0, 0.18)"
+            }}>
+            <List spacing={1}>
+              {suggestionTech.map((tech, index) => {
+                return (
+                  <ListItem key={index}>
+                    <Text
+                      as="strong"
+                      m={0}
+                      p={1}
+                      _hover={{
+                        color: "#FE4400",
+                        cursor: "pointer"
+                      }}
+                      onClick={() => handleSearchMentorForStack(tech)}
+                    >
+                      {tech}
+                    </Text>
+                  </ListItem>
+                )
+              })}
+            </List>
+          </Flex>
+          :
+          <></>
+        }
 
+      </Flex>
 
+      {/* Stacks */}
+      <Flex align="center" justify="center" flexWrap="wrap">
+        <ButtonSkill
+          value="NodeJs"
+          handleFunction={handleSearchMentorForStack}
+        />
+        <ButtonSkill
+          value="ReactJs"
+          handleFunction={handleSearchMentorForStack}
+        />
+        <ButtonSkill
+          value="MySQL"
+          handleFunction={handleSearchMentorForStack}
+        />
+        <ButtonSkill
+          value="C#"
+          handleFunction={handleSearchMentorForStack}
+        />
+        <ButtonSkill
+          value="Javascript"
+          handleFunction={handleSearchMentorForStack}
+        />
+      </Flex>
 
-      </section >
-    </div >
+      {/* Stacks Mentor Cards */}
+      <Flex gap={1} align="center" justify="center" flexWrap="wrap">
+        {mentors.map((mentor) => {
+          return (
+            <CardMentor
+              key={mentor.id}
+              name={mentor.name}
+              id={mentor.id}
+              position={mentor.position}
+              stack={mentor.stack}
+            />
+          )
+        })}
+      </Flex>
+    </Flex>
   )
 }
 
-
-
-
+export default Mentorias;
