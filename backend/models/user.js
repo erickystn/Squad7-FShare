@@ -47,6 +47,6 @@ const user = db.define(
 )
 
 //Para criação da tabela em primeiro momento, caso não exista:
-//user.sync()
+//user.sync().then(() => console.log('Tabela Criada'))
 
 module.exports =user;
