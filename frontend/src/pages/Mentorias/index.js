@@ -12,11 +12,11 @@ const Mentorias = () => {
   const [suggestionTech, setSuggestionTech] = useState([]);
 
   useEffect(() => {
-    setMentors(getMentor());
+    getDataMentors();
   }, [])
 
   useEffect(() => {
-    getTechs();
+    getDataMentors();
   }, [search])
 
   async function getDataMentors() {
@@ -162,17 +162,24 @@ const Mentorias = () => {
 
       {/* Stacks Mentor Cards */}
       <Flex gap={1} align="center" justify="center" flexWrap="wrap">
-        {mentors.map((mentor) => {
-          return (
-            <CardMentor
-              key={mentor.id}
-              name={mentor.name}
-              id={mentor.id}
-              position={mentor.position}
-              stack={mentor.stack}
-            />
-          )
-        })}
+
+        {mentors !== undefined ?
+          mentors.map((mentor, index) => {
+            return (
+              <CardMentor
+                key={mentor.cd_id}
+                name={mentor.nm_name}
+                id={mentor.cd_id}
+                position={mentor.nm_role}
+                pic={mentor.nm_pic}
+                stack={mentor.nm_skills}
+              />
+            )
+          })
+          :
+          <></>
+        }
+
       </Flex>
     </Flex>
   )
