@@ -28,7 +28,7 @@ const Cadastrar = () => {
       email: `${dataValidated.email + domainFcamara}`,
       password: dataValidated.password,
       name: dataValidated.name,
-      position: dataValidated.position,
+      role: dataValidated.position,
     };
     
     clearFields()

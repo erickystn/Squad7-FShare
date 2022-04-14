@@ -21,7 +21,7 @@ const Mentorias = () => {
   }, [search])
 
   async function getDataMentors() {
-    await axios.get('https:localhost:8080/getMentors')
+    await axios.get('https:localhost:8080/users')
   }
 
   function getTechs() {
