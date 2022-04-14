@@ -63,7 +63,11 @@ const allUser = async () => {
 
 const query = (query) =>{
 
-    return userDao.queryUsers(query)
+    const result = userDao.queryUsers(query)
+    result.forEach(user => {
+        user.nm_skills = user.nm_skills.split(",")
+    })
+    return result
 }
 
 
