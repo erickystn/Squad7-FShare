@@ -4,7 +4,8 @@
   "description": "",
   "main": "controller.js",
   "scripts": {
-    "start": "nodemon ./controller.js",
+    "start": "node .",
+    "dev": "nodemon ./controller.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

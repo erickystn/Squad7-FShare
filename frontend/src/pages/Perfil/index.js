@@ -12,11 +12,11 @@ const Perfil = () => {
   });
 
   useEffect(() => {
-    getDataMentor(1);
+    getDataMentor(14);
   }, [])
 
   async function getDataMentor(id) {
-    const { data } = await axios.get(`https://fshared-backend.herokuapp.com/user/${id}`);
+    const { data } = await axios.get(`http://localhost:3001/user/${id}`);
     setDataMentor(data)
   }
 
@@ -47,28 +47,31 @@ const Perfil = () => {
             <Text color="#000" fontSize="lg" mx={2} align="center">{dataMentor.nm_role}</Text>
             <Flex direction="row" align="center" m="20px">
 
-              {dataMentor.nm_skills ?
-                dataMentor.nm_skills.map(((skill, index) => {
-                  return (
-                    <Text
-                      key={index}
-                      as="strong"
-                      color="#000"
-                      fontSize="lg"
-                      mx={2}>
+              <Flex direction="row" flexWrap="wrap" maxWidth="320px" align="center" justify="center">
+
+                {dataMentor.nm_skills ?
+                  dataMentor.nm_skills.map(((skill, index) => {
+                    return (
+                      <Text
+                        key={index}
+                        as="strong"
+                        color="#000"
+                        fontSize="lg"
+                        mx={2}>
                         {skill}
-                    </Text>
-                  )
-                }))
-                :
-                <></>
-              }
+                      </Text>
+                    )
+                  }))
+                  :
+                  <></>
+                }
+              </Flex>
 
             </Flex>
           </Flex>
 
         </Flex>
-
+        
         <Flex direction="column" p={[2, 2, 10]} flex="1">
           <Link href="/mentorias" ml="auto" mr="auto">
             <Button
@@ -90,6 +93,7 @@ const Perfil = () => {
           />
 
         </Flex>
+
       </Flex>
     </Flex>
   )
