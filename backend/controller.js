@@ -9,6 +9,8 @@ const corsOptions = {
     optionsSuccessStatus: 200 // For legacy browser support
 }
 
+const port = 3001;
+
 app.use(bP.urlencoded({ extended: true }))
 app.use(cors(corsOptions))
 
@@ -43,7 +45,7 @@ app.get('/user/:cd_id', (req, res) => {
 
     userService.getUser(req.params.cd_id).then(result => {
         res.send(result)
-    }).catch(() => res.send({}))
+    }).catch(() => res.send(null))
 
 })
 
@@ -52,5 +54,5 @@ app.get('/query/:nm_skills', (req, resp) => {
     userService.query(req.params.nm_skills).then(result => resp.send(result))
 })
 
-app.listen(3001, () => console.log('Conexao Express Bem sucedida na porta 8080'))
+app.listen(process.env.PORT || port, () => console.log(`Conexao Express Bem sucedida na porta ${port}`))
 

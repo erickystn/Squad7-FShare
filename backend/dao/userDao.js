@@ -64,7 +64,7 @@ const getUser = async (cd_id) => {
 
     return user
     } else {
-        return {}
+        return null
     }
 
 
