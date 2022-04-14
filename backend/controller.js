@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const app = express();
 const userService = require('./service/userService.js')
 const bP = require('body-parser')
 const cors = require('cors')
