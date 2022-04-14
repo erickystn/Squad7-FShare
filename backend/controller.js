@@ -1,9 +1,17 @@
 const express = require('express')
 const app = express()
 const userService = require('./service/userService.js')
-const bP= require('body-parser')
+const bP = require('body-parser')
+const cors = require('cors')
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true,
+    optionsSuccessStatus: 200 // For legacy browser support
+}
 
-app.use(bP.urlencoded({ extended: true}))
+
+app.use(bP.urlencoded({ extended: true }))
+app.use(cors(corsOptions))
 
 // Cadastro usuario
 app.post('/userSignUp', (req, res) => {
@@ -17,7 +25,7 @@ app.post('/userSignUp', (req, res) => {
 })
 
 // Cadastro skills:
-app.post('/skill', (req, res) => { 
+app.post('/skill', (req, res) => {
     const cd_id = req.body.cd_id
     const cd_skill = req.body.nm_skills
 
@@ -27,12 +35,17 @@ app.post('/skill', (req, res) => {
 
 // Listar todos os usuarios:
 app.get('/users', (req, res) => {
+
     userService.allUser().then(result => res.send(result))
 })
 
 // Detalhar o usuario clicado:
-app.get('/user/:cd_id', (req, res) => {
-    userService.getUser(req.params.cd_id).then(result => res.send(result))
+app.get('/user/:cd_id', async (req, res) => {
+
+    await userService.getUser(req.params.cd_id).then(result => {
+        res.send(result)
+    })
+
 })
 
 // Pesquisar usuario por stack
@@ -40,5 +53,5 @@ app.get('/query/:nm_skills', (req, resp) => {
     userService.query(req.params.nm_skills).then(result => resp.send(result))
 })
 
-app.listen(8080, () => console.log('Conexao Express Bem sucedida'))
+app.listen(3001, () => console.log('Conexao Express Bem sucedida'))
 
