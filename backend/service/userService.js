@@ -1,9 +1,6 @@
-const { user } = require('pg/lib/defaults')
 const userDao = require('../dao/userDao')
 
-
 // Cadastro de usuário, validações, verificação de duplicidade
-
 const checkUser = async (usuario) =>{
     const resultCheckEmail = await userDao.checkEmail(usuario)
 
@@ -23,8 +20,7 @@ const create = async (usuario) => {
     console.log(resultCheckUser)
     if (resultCheckUser.id) { 
         resultCheckUser.cd_id = await userDao.cadastrar(usuario)
-    } // verifica se os valores estao em conformidade (1) se estiver envia para o Dao cadastrar no banco
-
+    }
 
     return resultCheckUser
 }
@@ -38,9 +34,13 @@ const addSkill = async (cd_user, cd_skill) => {
 }
 
 
-const getUser = (cd_id) =>{
+const getUser = (cd_id) => {
 
     return userDao.getUser(cd_id)
+}
+
+const allUser = () => {
+    return userDao.allUser()
 }
 
 const query = (query) =>{
@@ -49,4 +49,4 @@ const query = (query) =>{
 }
 
 
-module.exports = { create, addSkill, getUser, query };
+module.exports = { create, addSkill, getUser, allUser, query };

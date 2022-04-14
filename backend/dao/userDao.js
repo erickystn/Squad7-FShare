@@ -59,6 +59,15 @@ const getUser = async (cd_id) => {
 
 }
 
+const allUser = async () => {
+
+    await db.sync();
+
+    const users = await User.findAll()
+
+    return users
+}
+
 const queryUsers = async (query)=>{
     await db.sync();
 
@@ -75,27 +84,4 @@ const queryUsers = async (query)=>{
 }
 
 
-module.exports = { cadastrar, addSkill, getUser, queryUsers, checkEmail }
-
-/*
-const checkUser = async (id) => {
-
-    try {
-
-        await db.sync();
-
-        const user = await User.findByPk(123); 
-        if (user === null) {
-            console.log('Nao encontrado');
-            return false;
-        } else {
-            console.log(user instanceof User);
-            return true;
-        }
-
-    } catch (erro) {
-        console.log(erro)
-    }
-
-}
-*/
+module.exports = { cadastrar, addSkill, getUser, allUser, queryUsers, checkEmail }

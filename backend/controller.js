@@ -6,7 +6,7 @@ const bP= require('body-parser')
 app.use(bP.urlencoded({ extended: true}))
 
 // Cadastro usuario
-app.post('/userSignUp', (req, res) => { // receber os valores > enviar para o service > persistir com o Dao
+app.post('/userSignUp', (req, res) => {
     const usuario = req.body // recebe como obj os valores 
 
     userService.create(usuario)
@@ -23,6 +23,11 @@ app.post('/skill', (req, res) => {
 
     userService.addSkill(cd_id, cd_skill).then(() => res.send("Skill adicionada."))
 
+})
+
+// Listar todos os usuarios:
+app.get('/users', (req, res) => {
+    userService.allUser().then(result => res.send(result))
 })
 
 // Detalhar o usuario clicado:
