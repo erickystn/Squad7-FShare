@@ -1,9 +1,13 @@
 const express = require('express')
-const app = express()
 const userService = require('./service/userService.js')
-const bP= require('body-parser')
+const bP = require('body-parser')
+const cors = require('cors')
 
-app.use(bP.urlencoded({ extended: true}))
+
+const app = express()
+app.use(cors());
+app.use(bP.urlencoded({ extended: false }))
+app.use(bP.json())
 
 // Cadastro usuario
 app.post('/userSignUp', (req, res) => {
@@ -40,5 +44,5 @@ app.get('/query/:nm_skills', (req, resp) => {
     userService.query(req.params.nm_skills).then(result => resp.send(result))
 })
 
-app.listen(8080, () => console.log('Conexao Express Bem sucedida'))
+app.listen(3001, () => console.log('Conexao Express Bem sucedida'))
 
