@@ -1,6 +1,6 @@
 const {Op, Sequelize} = require('sequelize')
 const db = require("../db.js")
-const User = require("../models/User.js")
+const User = require("../models/user.js")
 
 const cadastrar = async (usuario) => {
     try {

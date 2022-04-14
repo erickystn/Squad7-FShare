@@ -37,7 +37,7 @@ app.post('/skill', (req, res) => {
 // Listar todos os usuarios:
 app.get('/users', async (req, res) => {
 
-  await userService.allUser().then(result => res.send(result))
+  await userService.allUser().then(result => res.send(JSON.parse(JSON.stringify(result))))
 })
 
 // Detalhar o usuario clicado:
