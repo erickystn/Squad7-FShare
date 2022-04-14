@@ -16,8 +16,8 @@ const Perfil = () => {
   // }, [])
 
   async function getDataMentor() {
-    const { response } = await axios.get(`https://fshared-backend.herokuapp.com/user/1`);
-    console.log("aquiiii:", response);
+    const { data } = await axios.get(`https://fshared-backend.herokuapp.com/user/1`);
+    console.log("aquiiii:", data);
   }
   getDataMentor(1)
   return (
