@@ -2,8 +2,9 @@
   "name": "back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "controller.js",
   "scripts": {
+    "start": "nodemon ./controller.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
