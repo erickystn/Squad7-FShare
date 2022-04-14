@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Flex, List, ListItem, Text, Link } from '@chakra-ui/react'
 import ButtonSkill from '../../components/ButtonSkill/ButtonSkill'
 import CardMentor from '../../components/Card/Mentor'
-import { getMentor } from '../../services/skillServices'
 import poolOfSkills from '../../services/poolOfSkills.js'
 import axios from 'axios'
 
@@ -16,12 +15,13 @@ const Mentorias = () => {
   }, [])
 
   useEffect(() => {
-    getDataMentors();
+    getTechs();
   }, [search])
 
   async function getDataMentors() {
     const { data } = await axios.get('https://fshared-backend.herokuapp.com/users')
     setMentors(data)
+    return(data)
   }
 
   function getTechs() {
@@ -33,15 +33,9 @@ const Mentorias = () => {
     }
   }
 
-  function handleSearchMentorForStack(tech) {
-    const arrMentors = getMentor()
-    const mentorWithTech = arrMentors.filter(mentor => mentor.stack.includes(tech))
-
-    if (mentorWithTech.length > 0) {
-      setMentors(mentorWithTech)
-    } else {
-      setSearch("")
-    }
+  async function getMentorsWithSkill(tech) {
+    const { data } = await axios.get(`https://fshared-backend.herokuapp.com/query/${tech}`)
+    setMentors(data)
     setSearch("")
   }
 
@@ -88,7 +82,7 @@ const Mentorias = () => {
             <button
               className="btn btn-outline-secondary"
               type="submit"
-              onClick={(e) => handleSearchMentorForStack(e)}
+              onClick={() => getMentorsWithSkill("ReactJs")}
             >
               <i className="fas fa-search fa-fw" />
             </button>
@@ -102,7 +96,7 @@ const Mentorias = () => {
             p={1}
             mt={10}
             w="100%"
-            maxWidth={1180}
+            maxWidth={1342}
             align="flexStart"
             css={{
               "z-index": "10",
@@ -121,7 +115,7 @@ const Mentorias = () => {
                         color: "#FE4400",
                         cursor: "pointer"
                       }}
-                      onClick={() => handleSearchMentorForStack(tech)}
+                      onClick={() => getMentorsWithSkill(tech)}
                     >
                       {tech}
                     </Text>
@@ -140,23 +134,23 @@ const Mentorias = () => {
       <Flex align="center" justify="center" flexWrap="wrap">
         <ButtonSkill
           value="NodeJs"
-          handleFunction={handleSearchMentorForStack}
+          handleFunction={getMentorsWithSkill}
         />
         <ButtonSkill
           value="ReactJs"
-          handleFunction={handleSearchMentorForStack}
+          handleFunction={getMentorsWithSkill}
         />
         <ButtonSkill
           value="MySQL"
-          handleFunction={handleSearchMentorForStack}
+          handleFunction={getMentorsWithSkill}
         />
         <ButtonSkill
           value="Laravel"
-          handleFunction={handleSearchMentorForStack}
+          handleFunction={getMentorsWithSkill}
         />
         <ButtonSkill
           value="Rust"
-          handleFunction={handleSearchMentorForStack}
+          handleFunction={getMentorsWithSkill}
         />
       </Flex>
 
@@ -164,7 +158,7 @@ const Mentorias = () => {
       <Flex gap={1} align="center" justify="center" flexWrap="wrap">
 
         {mentors !== undefined ?
-          mentors.map((mentor, index) => {
+          mentors.map((mentor) => {
             return (
               <CardMentor
                 key={mentor.cd_id}
