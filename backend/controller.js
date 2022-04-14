@@ -1,9 +1,10 @@
 const express = require('express')
+const app = express();
 const userService = require('./service/userService.js')
 const bP = require('body-parser')
 const cors = require('cors')
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: '*',
     credentials: true,
     optionsSuccessStatus: 200 // For legacy browser support
 }
@@ -51,5 +52,5 @@ app.get('/query/:nm_skills', (req, resp) => {
     userService.query(req.params.nm_skills).then(result => resp.send(result))
 })
 
-app.listen(8080, () => console.log('Conexao Express Bem sucedida na porta 8080'))
+app.listen(3001, () => console.log('Conexao Express Bem sucedida na porta 8080'))
 
