@@ -9,7 +9,6 @@ const corsOptions = {
     optionsSuccessStatus: 200 // For legacy browser support
 }
 
-
 app.use(bP.urlencoded({ extended: true }))
 app.use(cors(corsOptions))
 
@@ -34,15 +33,15 @@ app.post('/skill', (req, res) => {
 })
 
 // Listar todos os usuarios:
-app.get('/users', (req, res) => {
+app.get('/users', async (req, res) => {
 
-    userService.allUser().then(result => res.send(result))
+    await userService.allUser().then(result => res.send(result))
 })
 
 // Detalhar o usuario clicado:
-app.get('/user/:cd_id', async (req, res) => {
+app.get('/user/:cd_id', (req, res) => {
 
-    await userService.getUser(req.params.cd_id).then(result => {
+    userService.getUser(req.params.cd_id).then(result => {
         res.send(result)
     })
 
@@ -53,5 +52,5 @@ app.get('/query/:nm_skills', (req, resp) => {
     userService.query(req.params.nm_skills).then(result => resp.send(result))
 })
 
-app.listen(3001, () => console.log('Conexao Express Bem sucedida'))
+app.listen(8080, () => console.log('Conexao Express Bem sucedida na porta 8080'))
 
