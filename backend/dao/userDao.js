@@ -41,6 +41,12 @@ const addSkill = async (cd_user, skills) => {
 
 }
 
+const hasUser = async (cd_id) => {
+
+    await db.sync();
+    return User.findByPk(cd_id)
+}
+
 const getUser = async (cd_id) => {
 
     await db.sync();
@@ -84,4 +90,4 @@ const queryUsers = async (query)=>{
 }
 
 
-module.exports = { cadastrar, addSkill, getUser, allUser, queryUsers, checkEmail }
+module.exports = { cadastrar, addSkill, getUser, allUser, hasUser, queryUsers, checkEmail }

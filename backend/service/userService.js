@@ -25,17 +25,29 @@ const create = async (usuario) => {
     return resultCheckUser
 }
 
-const addSkill = async (cd_user, cd_skill) => {
+const hasUser = async(cd_id) => {
+
+    const resultHasUser = await userDao.hasUser(cd_id)
+    if(resultHasUser == null) {
+        return false
+    } else {
+        return true
+    }
+}
+
+const addSkill = async (cd_id, cd_skill) => {
     const nm_skill = Array.isArray(cd_skill) ? cd_skill : [cd_skill]
 
     const skills = nm_skill.join(",")
 
-    return userDao.addSkill(cd_user, skills)
+    if(await hasUser(cd_id)){
+        return userDao.addSkill(cd_id, skills)
+    } else {
+        return false 
+    }
 }
 
-
 const getUser = (cd_id) => {
-
     return userDao.getUser(cd_id)
 }
 

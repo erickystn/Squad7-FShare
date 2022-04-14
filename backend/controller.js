@@ -21,7 +21,7 @@ app.post('/skill', (req, res) => {
     const cd_id = req.body.cd_id
     const cd_skill = req.body.nm_skills
 
-    userService.addSkill(cd_id, cd_skill).then(() => res.send("Skill adicionada."))
+    userService.addSkill(cd_id, cd_skill).then((result) => result ? res.send(result) : res.status(400).send(result))
 
 })
 
