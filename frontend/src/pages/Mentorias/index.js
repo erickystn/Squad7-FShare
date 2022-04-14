@@ -4,6 +4,7 @@ import ButtonSkill from '../../components/ButtonSkill/ButtonSkill'
 import CardMentor from '../../components/Card/Mentor'
 import { getMentor } from '../../services/skillServices'
 import poolOfSkills from '../../services/poolOfSkills.js'
+import axios from 'axios'
 import "./style.css"
 
 const Mentorias = () => {
@@ -18,6 +19,10 @@ const Mentorias = () => {
   useEffect(() => {
     getTechs();
   }, [search])
+
+  async function getDataMentors() {
+    await axios.get('https:localhost:8080/getMentors')
+  }
 
   function getTechs() {
     const results = poolOfSkills.filter(skill => skill.toLowerCase().indexOf(search) !== -1);

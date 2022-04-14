@@ -15,8 +15,8 @@ const Perfil = () => {
     setDataMentor(getDataMentor());
   }, [])
 
-  async function getDataMentor() {
-    await axios.get('https:localhost:8080/getMentor')
+  async function getDataMentor(id) {
+    await axios.get(`https:localhost:8080/user/${id}`);
   }
 
   return (

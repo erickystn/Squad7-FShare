@@ -4,7 +4,7 @@ import iconWave from '../../assets/img/iconWave.png';
 import ButtonSkill from '../../components/ButtonSkill/ButtonSkill';
 import poolOfSkills from '../../services/poolOfSkills.js'
 import axios from 'axios'
-import { Router } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 const SelecionarSkill = () => {
   const [skillsSelected, setSkillsSelected] = useState([]);
@@ -12,10 +12,8 @@ const SelecionarSkill = () => {
 
   const isWideVersion = useBreakpointValue({
     base: false,
-    sm: true
+    sm: true,
   });
-
-  const route = Router;
 
   const handleAddOrRemoveSkill = (value) => {
     const skillList = skillsSelected;
@@ -32,7 +30,7 @@ const SelecionarSkill = () => {
 
   async function handleSubmitSkills() {
     const data = {
-      cd_id: 1,
+      cd_id: 999,
       nm_skills: skillsSelected
     }
 
@@ -40,7 +38,7 @@ const SelecionarSkill = () => {
     console.log(response)
 
     if (response.status === 200) {
-      route.push('/perfil')
+      return <Redirect to="/perfil" />
     } else {
       console.log(response)
     }
@@ -71,11 +69,11 @@ const SelecionarSkill = () => {
           }
           <Heading
             as="h1"
-            size="lg"
+            size={isWideVersion ? "xl" : "lg"}
             color='#FE4400'
-            align="center"
+            align={isWideVersion ? "right" : "center"}
           >
-            Selecione as habilidades que você mais domina!
+            Gostaria de ser mentor? Selecione as habilidades que você mais domina!
           </Heading>
         </Flex>
 
@@ -119,7 +117,7 @@ const SelecionarSkill = () => {
             Finalizar Cadastro!
           </Button>
           <Box align="center">
-            <Text as="strong" color="#36357E">Não quer adicionar suas habilidades? </Text>
+            <Text as="strong" color="#36357E">Não quer mentorar? </Text>
             <Link href="/mentorias">
               <Text
                 as="a"

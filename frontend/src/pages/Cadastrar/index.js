@@ -38,7 +38,7 @@ const Cadastrar = () => {
   }
 
   async function connectBackend(data) {
-    const { response } = await axios.post(`https:localhost:8080/skill`, data)
+    const { response } = await axios.post(`https:localhost:8080/userSignUp`, data)
     console.log(response)
 
     if (response.status === 201) {
