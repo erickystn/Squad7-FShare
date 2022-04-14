@@ -5,7 +5,6 @@ import CardMentor from '../../components/Card/Mentor'
 import { getMentor } from '../../services/skillServices'
 import poolOfSkills from '../../services/poolOfSkills.js'
 import axios from 'axios'
-import "./style.css"
 
 const Mentorias = () => {
   const [mentors, setMentors] = useState([]);
@@ -21,7 +20,8 @@ const Mentorias = () => {
   }, [search])
 
   async function getDataMentors() {
-    await axios.get('https:localhost:8080/users')
+    const { data } = await axios.get('https://fshared-backend.herokuapp.com/users')
+    setMentors(data)
   }
 
   function getTechs() {
@@ -67,7 +67,7 @@ const Mentorias = () => {
         </Text>
         <Link href="/" _hover={{ color: "#FE4400" }}>
           <Flex>
-            <text as="span" >Logout</text>
+            <Text as="span" >Logout</Text>
             <img className='icon-logout' src='dist/img/logout.png' alt="Icone de saída" />
           </Flex>
         </Link>
@@ -75,18 +75,18 @@ const Mentorias = () => {
 
       {/* Seacrh bar */}
       <Flex my="5" direction="column" w="100%">
-        <div class="input-group">
+        <div className="input-group">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="Buscar Habilidade"
             aria-label="Buscar Habilidade"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <div class="input-group-append">
+          <div className="input-group-append">
             <button
-              class="btn btn-outline-secondary"
+              className="btn btn-outline-secondary"
               type="submit"
               onClick={(e) => handleSearchMentorForStack(e)}
             >

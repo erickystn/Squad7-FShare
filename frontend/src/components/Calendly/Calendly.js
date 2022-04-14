@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 export default class Calendly extends React.Component {
   componentDidMount() {
     const head = document.querySelector('head');
@@ -9,19 +8,16 @@ export default class Calendly extends React.Component {
   }
   render() {
     return (
-      <div>
-        <div id="schedule_form">
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/elienaisoares"
-            style={{ minWidth: '320px', height: '580px' }}
-          />
-        </div>
+      <div id="schedule_form">
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/elienaisoares"
+          style={{ minWidth: '320px', height: '580px' }}
+        />
       </div>
     );
   }
 }
-
 
 export const CalendlyFunctional = ({ minWidth = '320px', height = '580px', url }) => {
   useEffect(() => {

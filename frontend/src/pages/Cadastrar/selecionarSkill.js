@@ -1,10 +1,20 @@
-import { Flex, Box, Text, Heading, VStack, Image, Button, useBreakpointValue, Link} from '@chakra-ui/react'
+import {
+  Flex,
+  Box,
+  Text,
+  Heading,
+  VStack,
+  Image,
+  Button,
+  useBreakpointValue,
+  Link
+} from '@chakra-ui/react'
 import { useState } from 'react'
+import { Redirect } from 'react-router-dom';
+import axios from 'axios'
 import iconWave from '../../assets/img/iconWave.png';
 import ButtonSkill from '../../components/ButtonSkill/ButtonSkill';
 import poolOfSkills from '../../services/poolOfSkills.js'
-import axios from 'axios'
-import { Redirect } from 'react-router-dom';
 
 const SelecionarSkill = () => {
   const [skillsSelected, setSkillsSelected] = useState([]);
@@ -122,7 +132,7 @@ const SelecionarSkill = () => {
               <Text
                 as="a"
                 color="#36357E"
-                >
+              >
                 Clique aqui
               </Text>
             </Link>

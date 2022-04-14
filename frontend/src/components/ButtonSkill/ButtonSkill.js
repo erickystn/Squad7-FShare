@@ -13,8 +13,7 @@ const ButtonSkill = ({value, isActive = false, handleFunction}) => {
       size="md"
       width="180px"
       _hover={{ bg: '#FE4400', color: '#ffff' }}
-      css={{ 'boxShadow': '3px 3px 7px #615D5D' }}
-      _focus="none"
+      css={{ 'boxShadow': '3px 3px 7px #615D5D'}}
     >
       {value}
     </Button>

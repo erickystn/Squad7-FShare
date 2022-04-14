@@ -11,16 +11,15 @@ const Perfil = () => {
     sm: true
   });
 
-  useEffect(() => {
-    setDataMentor(getDataMentor(3));
-    
-  }, [])
+  // useEffect(() => {
+  //   setDataMentor(getDataMentor(3));
+  // }, [])
 
-  async function getDataMentor(id) {
-    const { response } = await axios.get(`localhost:3001/user/${id}`);
+  async function getDataMentor() {
+    const { response } = await axios.get(`https://fshared-backend.herokuapp.com/user/1`);
     console.log("aquiiii:", response);
   }
-
+  getDataMentor(1)
   return (
     <Flex minHeight="100vh" bg="white">
       <Flex

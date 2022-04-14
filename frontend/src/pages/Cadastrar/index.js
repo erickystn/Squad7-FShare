@@ -143,7 +143,7 @@ const Cadastrar = () => {
                   <input
                     type="text"
                     id="input-name"
-                    class="form-control input"
+                    className="form-control input"
                     placeholder="Digite seu nome"
                     aria-label="Digite seu nome"
                     value={name}
@@ -160,9 +160,9 @@ const Cadastrar = () => {
                 </label>
                 <span className='star-red'>*</span>
 
-                <div class="input-group mb-3">
+                <div className="input-group mb-3">
                   <input
-                    class="form-control input"
+                    className="form-control input"
                     type="text"
                     id="input-position"
                     placeholder="Digite seu cargo"
@@ -183,9 +183,9 @@ const Cadastrar = () => {
             </label>
             <span className='star-red'>*</span>
 
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
               <input
-                class="form-control input"
+                className="form-control input"
                 type="text"
                 id="input-email"
                 placeholder="Digite seu email"
@@ -194,8 +194,8 @@ const Cadastrar = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">
+              <div className="input-group-append">
+                <span className="input-group-text" id="basic-addon2">
                   {domainFcamara}
                 </span>
               </div>
@@ -211,7 +211,7 @@ const Cadastrar = () => {
               <span className='star-red'>*</span>
 
               <input
-                class="form-control input"
+                className="form-control input"
                 type="password"
                 id="input-password"
                 placeholder="Digite uma senha"
@@ -232,7 +232,7 @@ const Cadastrar = () => {
 
               <input
                 type="password"
-                class="form-control input"
+                className="form-control input"
                 id="input-password-confirmation"
                 placeholder="Confirme a senha"
                 value={passwordConfirmation}
