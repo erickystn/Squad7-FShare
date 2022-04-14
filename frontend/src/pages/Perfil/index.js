@@ -12,11 +12,11 @@ const Perfil = () => {
   });
 
   useEffect(() => {
-    getDataMentor(14);
+    getDataMentor(5);
   }, [])
 
   async function getDataMentor(id) {
-    const { data } = await axios.get(`http://localhost:3001/user/${id}`);
+    const { data } = await axios.get(`https://fshared-backend.herokuapp.com/user/${id}`);
     setDataMentor(data)
   }
 

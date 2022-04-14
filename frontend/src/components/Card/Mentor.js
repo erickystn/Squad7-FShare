@@ -7,6 +7,14 @@ const CardMentor = ({ name, stack, id, pic = false, position }) => {
     sm: true
   });
 
+  let stackPrincipal = [];
+  if(stack.length > 3){
+    for(let i = 0; i < 3; i++){
+      stackPrincipal.push(stack[i])
+    }
+  } else {
+    stackPrincipal = stack
+  }
   return (
     <Flex
       justify="space-between"
@@ -55,7 +63,7 @@ const CardMentor = ({ name, stack, id, pic = false, position }) => {
           p={3}
           css={{ "borderRadius": "0 7px 7px 0" }}
         >
-          {stack.map((tech, index) => {
+          {stackPrincipal.map((tech, index) => {
             return (
               <Flex
                 key={index}
