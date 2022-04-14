@@ -12,11 +12,13 @@ const Perfil = () => {
   });
 
   useEffect(() => {
-    setDataMentor(getDataMentor());
+    setDataMentor(getDataMentor(3));
+    
   }, [])
 
   async function getDataMentor(id) {
-    await axios.get(`https:localhost:8080/user/${id}`);
+    const { response } = await axios.get(`localhost:3001/user/${id}`);
+    console.log("aquiiii:", response);
   }
 
   return (
@@ -33,22 +35,29 @@ const Perfil = () => {
         <Flex direction="column" p={10} h="100%" justify="center" align="space-between" >
           <Flex direction="column" align="center">
             <Image
-              src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=440&q=80"
+              src={dataMentor.nm_pic}
               w="280px"
               h="280px"
               borderRadius="full"
               css={{ "border": "2px solid white" }}
             />
-            <Text as="strong" color="#36357E" fontSize="4xl" mx={4}>Elienai Soares</Text>
+            <Text as="strong" color="#36357E" fontSize="4xl" mx={4}>{dataMentor.nm_name}</Text>
           </Flex>
 
           <Flex direction="column" align="center">
-            <Text color="#000" fontSize="lg" mx={2} align="center">Dev Senior</Text>
-            <Flex direction="row" align="center" m="20px">
-              <Text as="strong" color="#000" fontSize="lg" mx={2}>React</Text>
-              <Text as="strong" color="#000" fontSize="lg" mx={2}>Nodejs</Text>
-              <Text as="strong" color="#000" fontSize="lg" mx={2}>RubyOnRails</Text>
-            </Flex>
+            <Text color="#000" fontSize="lg" mx={2} align="center">{dataMentor.nm_role}</Text>
+            {/* <Flex direction="row" align="center" m="20px">
+              {dataMentor.map((user => {
+                return(
+                  <Text
+                    as="strong"
+                    color="#000"
+                    fontSize="lg"
+                    mx={2}>{user.nm_skills}
+                  </Text>
+                )
+              }))}
+            </Flex> */}
           </Flex>
 
         </Flex>
