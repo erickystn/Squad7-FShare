@@ -48,10 +48,11 @@ const hasUser = async (cd_id) => {
 }
 
 const getUser = async (cd_id) => {
-
+    const user = {}
     await db.sync();
     const result = await User.findByPk(cd_id)
-    const user = {}
+    if (result) {
+
     user.cd_id = result.cd_id;
     user.nm_pic = result.nm_pic? result.nm_pic : "No Photo";
     user.nm_name = result.nm_name;
@@ -62,6 +63,10 @@ const getUser = async (cd_id) => {
     console.log(user)
 
     return user
+    } else {
+        return {}
+    }
+
 
 }
 

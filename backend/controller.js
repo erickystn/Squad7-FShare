@@ -43,7 +43,7 @@ app.get('/user/:cd_id', (req, res) => {
 
     userService.getUser(req.params.cd_id).then(result => {
         res.send(result)
-    })
+    }).catch(() => res.send({}))
 
 })
 
