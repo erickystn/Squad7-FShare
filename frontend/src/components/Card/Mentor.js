@@ -39,7 +39,7 @@ const CardMentor = ({ name, stack, id, pic = false, position }) => {
             {name}
           </Text>
           <Text as="p" fontSize='sm'>{position}</Text>
-          <Link href={`/perfil`} my={2}>
+          <Link href={`/perfil/${id}`} my={2}>
             <Button
               type="button"
               bg="#5251A2"

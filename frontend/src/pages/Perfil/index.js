@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Flex, Button, Text, Image, Link, useBreakpointValue } from '@chakra-ui/react'
 import { CalendlyFunctional } from '../../components/Calendly/Calendly'
+import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
 const Perfil = () => {
   const [dataMentor, setDataMentor] = useState({})
+  
+  const { id } = useParams()
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -12,10 +15,10 @@ const Perfil = () => {
   });
 
   useEffect(() => {
-    getDataMentor(5);
+    getDataMentor();
   }, [])
 
-  async function getDataMentor(id) {
+  async function getDataMentor() {
     const { data } = await axios.get(`https://fshared-backend.herokuapp.com/user/${id}`);
     setDataMentor(data)
   }
