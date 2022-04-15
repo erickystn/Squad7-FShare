@@ -63,7 +63,7 @@ $ yarn start
 ```
 
 ## 📦 Deploy
-Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir pelo [link](https://nodejs.org/en/)
+Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir pelo [link](https://fshare-front.herokuapp.com)
 
 
 ## 🛠️ Construído com
