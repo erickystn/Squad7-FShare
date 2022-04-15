@@ -5,15 +5,31 @@
 
 <h1 align="center">
  <img alt="Tela da aplicação" src="https://github.com/erickystn/TechnicalShare/blob/main/.github/fshare.png?raw=true" width = "600px" />
- </h1>
+</h1>
 
-## 🎥 Apresentação
+<ol>
+    <li><a href="#sobre">Sobre</a></li>
+        <li> <a href="#apresentacao">Apresentação</a></li>
+        <li> <a href="#comecando">Começando</a> </li>
+        <li> <a href="#deploy">Deploy</a> </li>
+        <li> <a href="#construidocom">Construido com</a> </li>
+        <li> <a href="#features">Features</a></li>
+        <li> <a href="#autores">Autores</a></li>
+        <li><a href="#licenca">Licença</a></li>
+    <li><a href="#agradecimentos">Agradecimentos</a></li>
+</ol>
+
+<h2 id="sobre">Sobre</h2> 
+
+O Fshare foi um projeto desenvolvido pelo Squad 7 para o Hackathon do Programa de Formação da [FCamara](https://digital.fcamara.com.br/programadeformacao). O objetivo desse projeto foi a construção de uma ferramenta que possa auxiliar na hora de procurar um profissional ideal para sua área de estudo e ter a oportunidade de agendar desde um bate-papo mais rápido até uma mentoria mais complexa, onde vocês poderão trocar conhecimentos. No Fshare, pessoas com diferentes níveis de experiência poderão se encontrar para trocar experiências, sanar dúvidas e criar networking, sempre priorizando o aprendizado. Todos podem mentorar nas áreas de conhecimento que dominam e podem ser ajudado por outros. 
+
+<h2 id="apresentacao">🎥 Apresentação</h2> 
 <p align="left">Confira alguns vídeos preparados para esta aplicação</p>
 
 - [Vídeo Pitch](https://youtu.be/99XvuKPWrVc)
 - [Vídeo demonstrativo](https://youtu.be/sP98huacezA)
 
-## 🚀 Começando
+<h2 id="comecando">🚀 Começando</h2> 
 
 ### 📋 Pré-requisitos
 
@@ -62,11 +78,12 @@ $ yarn start
 # A Aplicação iniciará em http://localhost:3000
 ```
 
-## 📦 Deploy
+<h2 id="deploy">📦 Deploy</h2> 
+
 Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir pelo [link](https://fshare-front.herokuapp.com)
 
 
-## 🛠️ Construído com
+<h2 id="construidocom">🛠️ Construído com</h2> 
 
 Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto fora: 
 
@@ -77,7 +94,15 @@ Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto fo
 * [ChakraUI](https://chakra-ui.com) - Biblioteca de componentes estilizados.
 * [Bootstrap](https://react-bootstrap.github.io) - Framework front-end para estilização
  
-## ✒️ Autores
+<h2 id="features">Features</h2> 
+
+- Acrescentar a funcionalidade “FastShare”, com chats para dúvidas pontuais;
+- Realizar pesquisas de satisfação dos usuários sobre a plataforma;
+- Fazer o mapeamento das habilidades dos colaboradores e aprimorar os filtros;
+- Possibilitar uma trilha de desenvolvimento personalizada com possibilidades de aprendizado a longo prazo;
+- Implementar um histórico de mentorias e lista individual de favoritos.
+
+<h2 id="autores">✒️ Autores</h2> 
 
 Pariciparam desse projeto:
 - [**Erick Braga**](https://github.com/erickystn) - Desenvolvedor Back-end
@@ -87,11 +112,12 @@ Pariciparam desse projeto:
 - [**Glaucia Dias**](https://www.linkedin.com/in/glaucia-dias-ux/) - UX/UI
 
 
-## 📄 Licença
+<h2 id="licenca">📄 Licença</h2> 
 
 Este projeto está sob a licença MIT.
 
-## 🎁 Agradecimentos
+<h2 id="agradecimentos">🎁 Agradecimentos</h2> 
+
 
 * Agradecimentos especiais a todos os mentores da [FCamara](https://www.fcamara.com.br) que nos guiaram e apoiaram durante este projeto.
 
