@@ -18,7 +18,7 @@ app.use(cors(corsOptions))
 // Cadastro usuario
 app.post('/userSignUp', (req, res) => {
   const usuario = req.body // recebe como obj os valores 
-  userService.create(usuario)
+  userService.create(usuario);
     .then(resultado => {
       if (resultado.id) res.send(resultado)
       else res.status(400).send(resultado)
