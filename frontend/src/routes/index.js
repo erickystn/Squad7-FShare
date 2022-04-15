@@ -12,7 +12,7 @@ export default function Routes() {
     <Switch>
       <Route exact path="/" component={Inicio} />
       <Route exact path="/cadastrar" component={Cadastrar} />
-      <Route exact path="/skills" component={SelecionarSkill} />
+      <Route exact path="/skills/:id" component={SelecionarSkill} />
       <Route exact path="/perfil/:id" component={Perfil} />
       <Route exact path="/mentorias" component={Mentorias}  />
     </Switch>

@@ -9,8 +9,8 @@ import {
   useBreakpointValue,
   Link
 } from '@chakra-ui/react'
-import { useState } from 'react'
-import { Redirect } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import axios from 'axios'
 import iconWave from '../../assets/img/iconWave.png';
 import ButtonSkill from '../../components/ButtonSkill/ButtonSkill';
@@ -19,11 +19,19 @@ import poolOfSkills from '../../services/poolOfSkills.js'
 const SelecionarSkill = () => {
   const [skillsSelected, setSkillsSelected] = useState([]);
   const [newRender, setNewRender] = useState(false);
+  const [idUser, setIdUser] = useState(1);
+  const [isSubmitted, setIsSubmitted] = useState(true);
+
+  const { id } = useParams()
 
   const isWideVersion = useBreakpointValue({
     base: false,
     sm: true,
   });
+
+  useEffect(() => {
+    setIdUser(id)
+  },[])
 
   const handleAddOrRemoveSkill = (value) => {
     const skillList = skillsSelected;
@@ -39,19 +47,13 @@ const SelecionarSkill = () => {
   }
 
   async function handleSubmitSkills() {
-    const data = {
-      cd_id: 999,
+    const dataRegisterSkill = {
+      cd_id: idUser,
       nm_skills: skillsSelected
     }
 
-    const { response } = await axios.post(`https:localhost:8080/skill`, data)
-    console.log(response)
-
-    if (response.status === 200) {
-      return <Redirect to="/perfil" />
-    } else {
-      console.log(response)
-    }
+    await axios.post(`https://fshared-backend.herokuapp.com/skill`, dataRegisterSkill)
+    setIsSubmitted(false)
   }
 
   return (
@@ -114,24 +116,40 @@ const SelecionarSkill = () => {
         </Flex>
 
         <VStack width="100%" justify="space-between">
-          <Button
-            type="button"
-            bg="#FE4400"
-            color="#000000"
-            size="lg"
-            _hover={{ bg: '#B93200', color: '#ffff' }}
-            css={{ 'boxShadow': '3px 3px 7px #615D5D' }}
-            onClick={() => handleSubmitSkills()}
+          {isSubmitted ?
+            <Button
+              type="button"
+              bg="#FE4400"
+              color="#000000"
+              size="lg"
+              _hover={{ bg: '#B93200', color: '#ffff' }}
+              css={{ 'boxShadow': '3px 3px 7px #615D5D' }}
+              onClick={() => handleSubmitSkills()}
 
-          >
-            Finalizar Cadastro!
-          </Button>
+            >
+              Finalizar Cadastro!
+            </Button>
+            :
+            <Link href="/mentorias">
+              <Button
+                type="button"
+                bg="#FE4400"
+                color="#000000"
+                size="lg"
+                _hover={{ bg: '#B93200', color: '#ffff' }}
+                css={{ 'boxShadow': '3px 3px 7px #615D5D' }}
+              >
+                Continuar!
+              </Button>
+            </Link>
+          }
           <Box align="center">
             <Text as="strong" color="#36357E">Não quer mentorar? </Text>
             <Link href="/mentorias">
               <Text
-                as="a"
+                as="span"
                 color="#36357E"
+                _hover={{curso: "poiter"}}
               >
                 Clique aqui
               </Text>

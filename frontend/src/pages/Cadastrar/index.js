@@ -10,6 +10,7 @@ const Cadastrar = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
+  const [idNewUser, setIdNewUser] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,13 +34,14 @@ const Cadastrar = () => {
 
     clearFields()
     setRegisterSuccess(true)
-    await connectBackend(data);
-    setIsLoading(false)
+    const idUser = await connectBackend(data);
+    setIdNewUser(idUser)
   }
 
   async function connectBackend(dataRegister) {
     setIsLoading(true)
-    await axios.post(`http://localhost:3001/userSignUp`, dataRegister)
+    const {data} = await axios.post(`https://fshared-backend.herokuapp.com/userSignUp`, dataRegister)
+    return data.cd_id
   }
 
   function clearFields() {
@@ -137,7 +139,7 @@ const Cadastrar = () => {
             :
             <>
               <Text as="strong" fontSize="2xl" color="#FE4400">Cadastro Aprovado</Text>
-              <Link href="/skills" w="70%">
+              <Link href={`/skills/idNewUser${idNewUser}`} w="70%">
                 <Button
                   type="button"
                   bg="#FE4400"

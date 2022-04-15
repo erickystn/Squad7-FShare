@@ -1,4 +1,5 @@
 import { Button, Flex, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react'
+import imgDefault from '../../assets/img/avatarDefault.jpg'
 
 const CardMentor = ({ name, stack, id, pic = false, position }) => {
 
@@ -28,7 +29,7 @@ const CardMentor = ({ name, stack, id, pic = false, position }) => {
       <Flex bg="#fff" px={3} borderRadius="8" align="center">
         <Image
           
-          src={pic ? pic : "https://github.com/erickystn.png"}
+          src={pic ? pic : imgDefault}
           alt="Imagem de perfil"
           height={{ base: "70", sm: "150" }}
           widht={{ base: "50", sm: "100" }}

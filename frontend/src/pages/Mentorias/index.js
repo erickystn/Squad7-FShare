@@ -166,7 +166,7 @@ const Mentorias = () => {
                 id={mentor.cd_id}
                 position={mentor.nm_role}
                 pic={mentor.nm_pic}
-                stack={mentor.nm_skills}
+                stack={mentor.nm_skills ? mentor.nm_skills : [] }
               />
             )
           })
