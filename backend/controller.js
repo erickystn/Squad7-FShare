@@ -12,12 +12,12 @@ const corsOptions = {
 const port = 3001;
 
 app.use(bP.urlencoded({ extended: true }))
+app.use(bP.json())
 app.use(cors(corsOptions))
 
 // Cadastro usuario
 app.post('/userSignUp', (req, res) => {
   const usuario = req.body // recebe como obj os valores 
-
   userService.create(usuario)
     .then(resultado => {
       if (resultado.id) res.send(resultado)

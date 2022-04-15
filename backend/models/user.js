@@ -20,7 +20,7 @@ const user = db.define(
         },
         nm_description: {
             type: Sequelize.STRING, //definir tamanho...
-            allowNull: false
+            allowNull: true
         },
         nm_role: {
             type: Sequelize.STRING,
