@@ -4,7 +4,7 @@
 <p align="center">Aplicação desenvolvida pelo Squad 7 durante o programa de formação da FCamara.</p>
 
 <h1 align="center">
- <img alt="Tela da aplicação" src="https://github.com/erickystn/TechnicalShare/blob/main/.github/fshared.png" width = "600px" />
+ <img alt="Tela da aplicação" src="https://github.com/erickystn/TechnicalShare/blob/main/.github/fshare.png?raw=true" width = "600px" />
  </h1>
 
 ## 🎥 Apresentação
