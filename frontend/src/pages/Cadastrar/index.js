@@ -156,7 +156,6 @@ const Cadastrar = () => {
         </Flex>
         :
 
-
         <div className="register-page box-register" >
 
           <div className='col-10 col-sm-10 col-md-10 d-flex align-items-stretch flex-column'>
@@ -286,7 +285,6 @@ const Cadastrar = () => {
               <div>
                 <Button
                   type="submit"
-                  className="btn-signup"
                   bg="#FE4400"
                   color="white"
                   w="100%"
