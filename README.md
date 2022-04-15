@@ -80,12 +80,12 @@ $ yarn start
 
 <h2 id="deploy">📦 Deploy</h2> 
 
-Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir pelo [link](https://fshare-front.herokuapp.com)
+Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir neste [link](https://fshare-front.herokuapp.com).
 
 
 <h2 id="construidocom">🛠️ Construído com</h2> 
 
-Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto fora: 
+Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto: 
 
 * [ReactJs](https://reactjs.org) - Biblioteca de front-end.
 * [NodeJs](https://nodejs.org/en/) - Runtime Javascript para back-end.
