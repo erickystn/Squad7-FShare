@@ -55,7 +55,7 @@ const getUser = (cd_id) => {
 const allUser = async () => {
     const result = await userDao.allUser()
     result.forEach(user => {
-        user.nm_skills = user.nm_skills.split(",")
+        user.nm_skills = user.nm_skills ? user.nm_skills.split(",") : null
     })
 
     return result
@@ -65,7 +65,7 @@ const query = async (query) =>{
 
     const result = await userDao.queryUsers(query)
     result.forEach(user => {
-        user.nm_skills = user.nm_skills.split(",")
+        user.nm_skills = user.nm_skills ? user.nm_skills.split(",") : null
     })
     return result
 }

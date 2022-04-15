@@ -19,7 +19,7 @@ app.use(cors(corsOptions))
 app.post('/userSignUp', (req, res) => {
   const usuario = req.body // recebe como obj os valores 
   userService.create(usuario);
-    .then(resultado => {
+    then(resultado => {
       if (resultado.id) res.send(resultado)
       else res.status(400).send(resultado)
     }) // envia ao service p verificacao e o resultado sera enviado a pagina com 200(padrao) ou 400 (se erro)
