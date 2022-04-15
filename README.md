@@ -12,7 +12,7 @@
         <li> <a href="#comecando">Começando</a> </li>
         <li> <a href="#deploy">Deploy</a> </li>
         <li> <a href="#construidocom">Construido com</a> </li>
-        <li> <a href="#features">Features</a></li>
+        <li> <a href="#features">Futuras Features</a></li>
         <li> <a href="#autores">Autores</a></li>
         <li><a href="#licenca">Licença</a></li>
     <li><a href="#agradecimentos">Agradecimentos</a></li>
@@ -93,7 +93,7 @@ Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto fo
 * [ChakraUI](https://chakra-ui.com) - Biblioteca de componentes estilizados.
 * [Bootstrap](https://react-bootstrap.github.io) - Framework front-end para estilização
  
-<h2 id="features">Features</h2> 
+<h2 id="features">⚙️ Futuras Features</h2> 
 
 - Acrescentar a funcionalidade “FastShare”, com chats para dúvidas pontuais;
 - Realizar pesquisas de satisfação dos usuários sobre a plataforma;
