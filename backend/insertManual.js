@@ -70,7 +70,7 @@ const user6 = {
 userService.create(user6).then((result) => console.log(result))
 
 const user7 = {
-    nm_pic: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=440&q=80',
+    nm_pic: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=440&q=80',
     nm_name: 'Caique Brito',
     nm_role: 'Dev Junior',
     nm_skills: 'NodeJs,Rust,AWS',

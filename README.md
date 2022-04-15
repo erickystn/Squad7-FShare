@@ -80,12 +80,12 @@ $ yarn start
 
 <h2 id="deploy">📦 Deploy</h2> 
 
-Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir pelo [link](https://fshare-front.herokuapp.com)
+Fshare também possui uma versão em produção hospedado no [Heroku](http://heroku.com/) que você pode conferir neste [link](https://fshare-front.herokuapp.com).
 
 
 <h2 id="construidocom">🛠️ Construído com</h2> 
 
-Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto fora: 
+Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto: 
 
 * [ReactJs](https://reactjs.org) - Biblioteca de front-end.
 * [NodeJs](https://nodejs.org/en/) - Runtime Javascript para back-end.
@@ -104,13 +104,12 @@ Algumas ferramentas que foram utilizadas para o desenvolvimento desse projeto fo
 
 <h2 id="autores">✒️ Autores</h2> 
 
-|:woman_cartwheeling:|Nome|*No Programa de Formação eu...*|Contatos|
-|--|--|:--:|--|
-|<img src="assets/images/Bruna.png" width="300"><br>*Desenvolvedora Back-end*| Bruna Torres| *"...vi o quanto é transformador participar de um Hackathon. Aprender uma tecnologia do zero em um período de tempo tão curto e conhecer/trabalhar com pessoas nunca vistas torna tudo ainda mais incrível e desafiador. Cada dia é essencial e após 15 dias já parece que se passaram semanas hahah"* | [Github](https://github.com/bruninhaltorres) [Linkedin](https://www.linkedin.com/mwlite/in/bruninhaltorres) |
-| <img src="assets/images/Erick.png" width="300"><br>*Desenvolvedor Back-end* | Erick Braga | *"... Obrigada!"* | [Github](https://github.com/erickystn) [Linkedin](https://www.linkedin.com/in/erick-santana-9240b0b1/) |
-|<img src="assets/images/Elienai.png" width="300"><br>*Desenvolvedor Front-end*| Elienai Soares | *"...vi que participar do Programa de Formação FCamara com certeza foi uma das melhores experiências que tive, construir uma aplicação do zero com um time me mostrou o quão importante é o trabalho em equipe e saber se comunicar, foram 15 dias de aprendizados e conversas que acrescentaram muito para mim em todos os aspectos."* | [Github](https://github.com/NaySoares) [Linkedin](https://linkedin.com/in/elienai-soares) |
-| <img src="assets/images/gislaine.png" width="300"><br>*Desenvolvedora Front-end* | Gislaine Costa | *"...tive a oportunidade de trabalhar no meu primeiro projeto e foi algo realmente desafiador pra se fazer em 15 dias. Foi um período em que aprendi bastante, principalmente sobre o dia a dia dev e só tenho a agradecer aos meus colegas de Squad e à FCamara pela experiência."* | [Linkedin](https://www.linkedin.com/in/gislaine-costa-cerqueira/) |
-| <img src="assets/images/glaucia.png" width="300"><br>*UX Designer* | Glaucia Dias | *"...percebi como é importante a colaboração em equipe e como a gente pode complementar e aprender com o trabalho do outro. Também consegui ver melhor aquilo que preciso melhorar e me desafiar a colocar na prática as teorias. Sinto muita gratidão por poder participar desse momento tão enriquecedor"* | [Linkedin](https://www.linkedin.com/in/glaucia-dias-ux/) |
+Pariciparam desse projeto:
+- [**Erick Braga**](https://github.com/erickystn) - Desenvolvedor Back-end
+- [**Bruna Torres**](https://github.com/bruninhaltorres) - Desenvolvedora Back-end
+- [**Gislaine Costa**](https://github.com/gih-costa) - Desenvolvedora Front-end
+- [**Elienai Soares**](https://github.com/NaySoares) - Desenvolvedor Front-end
+- [**Glaucia Dias**](https://www.linkedin.com/in/glaucia-dias-ux/) - UX/UI
 
 
 <h2 id="licenca">📄 Licença</h2> 
@@ -119,7 +118,9 @@ Este projeto está sob a licença MIT.
 
 <h2 id="agradecimentos">🎁 Agradecimentos</h2> 
 
+
 * Agradecimentos especiais a todos os mentores da [FCamara](https://www.fcamara.com.br) que nos guiaram e apoiaram durante este projeto.
+
 
 ---
 com ❤️ por **Squad 7** da Season 3 - FCamara😊

@@ -14,6 +14,8 @@ export default function RouteWrapper({
       <div></div>
     )
   }
+  
+  //verificação se está logado 
 /*
   if (!signed && isPrivate) {
     return <Redirect to="/" />

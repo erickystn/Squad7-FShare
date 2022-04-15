@@ -41,6 +41,7 @@ const Cadastrar = () => {
   async function connectBackend(dataRegister) {
     setIsLoading(true)
     const {data} = await axios.post(`https://fshared-backend.herokuapp.com/userSignUp`, dataRegister)
+    setIsLoading(false)
     return data.cd_id
   }
 
@@ -139,7 +140,7 @@ const Cadastrar = () => {
             :
             <>
               <Text as="strong" fontSize="2xl" color="#FE4400">Cadastro Aprovado</Text>
-              <Link href={`/skills/idNewUser${idNewUser}`} w="70%">
+              <Link href={`/skills/${idNewUser}`} w="70%">
                 <Button
                   type="button"
                   bg="#FE4400"
@@ -155,7 +156,6 @@ const Cadastrar = () => {
           }
         </Flex>
         :
-
 
         <div className="register-page box-register" >
 
@@ -286,7 +286,6 @@ const Cadastrar = () => {
               <div>
                 <Button
                   type="submit"
-                  className="btn-signup"
                   bg="#FE4400"
                   color="white"
                   w="100%"
